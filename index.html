@@ -1340,6 +1340,7 @@
     // Show all sections (Home view — full scrollable page)
     function showAllSections() {
         allSections.forEach(s => {
+            if (s.id === 'cv') return; // Hide Resume on Home page
             s.classList.add('active');
             s.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         });
