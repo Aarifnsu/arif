@@ -1337,7 +1337,28 @@
     const nav = document.getElementById('nav');
     const menuToggle = document.getElementById('menu-toggle');
 
+    // Show all sections (Home view — full scrollable page)
+    function showAllSections() {
+        allSections.forEach(s => {
+            s.classList.add('active');
+            s.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+        });
+        allNavLinks.forEach(l => l.classList.remove('active'));
+        allNavLinks.forEach(l => {
+            if (l.dataset.section === 'hero') l.classList.add('active');
+        });
+        window.scrollTo({ top: 0 });
+        closeMobileMenu();
+    }
+
+    // Show only one section (individual page view)
     function switchSection(targetId) {
+        // If Home clicked, show all sections
+        if (targetId === 'hero') {
+            showAllSections();
+            return;
+        }
+
         // Hide all sections
         allSections.forEach(s => s.classList.remove('active'));
         // Deactivate all nav links
@@ -1346,12 +1367,9 @@
         // Show target section
         const target = document.getElementById(targetId);
         if (target) {
-            // Small delay so the fade-out is perceived before fade-in
             requestAnimationFrame(() => {
                 target.classList.add('active');
-                // Trigger fade-up animations inside the section
                 target.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-                // Scroll to top of page
                 window.scrollTo({ top: 0 });
             });
         }
@@ -1361,7 +1379,10 @@
             if (l.dataset.section === targetId) l.classList.add('active');
         });
 
-        // Close mobile menu
+        closeMobileMenu();
+    }
+
+    function closeMobileMenu() {
         nav.classList.remove('active');
         const icon = menuToggle.querySelector('i');
         icon.classList.add('bx-menu');
@@ -1377,10 +1398,10 @@
         });
     });
 
-    // Logo click → go to Home
+    // Logo click → go to Home (all sections)
     document.querySelector('.logo').addEventListener('click', (e) => {
         e.preventDefault();
-        switchSection('hero');
+        showAllSections();
     });
 
     // Hero buttons that link to sections
@@ -1403,8 +1424,8 @@
         icon.classList.toggle('bx-x');
     });
 
-    // Initialize: show hero, trigger its fade-up animations
-    document.querySelectorAll('#hero .fade-up').forEach(el => el.classList.add('visible'));
+    // Initialize: show ALL sections on page load (Home view)
+    showAllSections();
 
     // ===== THEME TOGGLE =====
     const themeToggle = document.getElementById('theme-toggle');
