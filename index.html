@@ -826,7 +826,7 @@
             </div>
             <div class="timeline-item">
                 <div class="date">Jun 2019 — Dec 2019</div>
-                <h3>Front-End Web Developer (Intern)</h3>
+                <h3>Front-End Web Developer</h3>
                 <div class="company">Jeeves.Plus — Remote</div>
                 <p>Developed responsive web interfaces using HTML, CSS, and JavaScript. Collaborated with the team on UI/UX implementations.</p>
             </div>
@@ -1359,19 +1359,22 @@
             return;
         }
 
-        // Hide all sections
-        allSections.forEach(s => s.classList.remove('active'));
+        // Hide all sections and reset fade-ups
+        allSections.forEach(s => {
+            s.classList.remove('active');
+            s.querySelectorAll('.fade-up').forEach(el => el.classList.remove('visible'));
+        });
         // Deactivate all nav links
         allNavLinks.forEach(l => l.classList.remove('active'));
 
-        // Show target section
+        // Show target section after a brief delay for clean transition
         const target = document.getElementById(targetId);
         if (target) {
-            requestAnimationFrame(() => {
+            setTimeout(() => {
                 target.classList.add('active');
                 target.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
                 window.scrollTo({ top: 0 });
-            });
+            }, 50);
         }
 
         // Activate the clicked nav link
