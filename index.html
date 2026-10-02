@@ -405,36 +405,141 @@
         @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 550px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
-        /* ===== CV / RESUME VIEWER ===== */
+        /* ===== RESUME SECTION ===== */
         #cv { background: var(--bg-section-alt); }
-        .cv-tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
-        .cv-tab {
-            padding: 10px 24px; border-radius: 10px; font-size: 0.9rem; font-weight: 600;
+
+        /* Resume text content */
+        .resume-content { margin-bottom: 48px; }
+        .resume-block {
             background: var(--bg-card); border: 1px solid var(--border);
-            color: var(--text-gray); cursor: pointer; transition: all 0.3s;
+            border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
+            transition: all 0.3s;
         }
-        .cv-tab.active, .cv-tab:hover {
-            background: var(--gradient-primary); color: #fff; border-color: transparent;
+        .resume-block:hover { border-color: var(--primary); }
+        .resume-block-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border);
         }
-        .cv-viewer {
+        .resume-block-header i {
+            font-size: 1.4rem; color: var(--primary);
+            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+            background: rgba(91, 184, 208, 0.1); border-radius: 10px; flex-shrink: 0;
+        }
+        .resume-block-header h3 {
+            font-size: 1.15rem; font-weight: 700; color: var(--text-white); margin: 0;
+        }
+        .resume-block p {
+            color: var(--text-gray); font-size: 0.92rem; line-height: 1.7; margin: 0 0 8px;
+        }
+        .resume-block p:last-child { margin-bottom: 0; }
+
+        /* Resume experience items */
+        .resume-exp-item {
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+        }
+        .resume-exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .resume-exp-item:first-child { padding-top: 0; }
+        .resume-exp-top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            gap: 12px; margin-bottom: 4px; flex-wrap: wrap;
+        }
+        .resume-exp-top h4 {
+            font-size: 1rem; font-weight: 600; color: var(--text-white); margin: 0;
+        }
+        .resume-exp-top .date {
+            font-size: 0.82rem; color: var(--primary); font-weight: 600;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .resume-exp-item .company {
+            font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;
+        }
+        .resume-exp-item .desc {
+            font-size: 0.88rem; color: var(--text-gray); line-height: 1.6;
+        }
+        .resume-exp-item ul {
+            margin: 6px 0 0; padding-left: 18px; list-style: none;
+        }
+        .resume-exp-item ul li {
+            font-size: 0.85rem; color: var(--text-gray); line-height: 1.6;
+            position: relative; padding-left: 14px; margin-bottom: 4px;
+        }
+        .resume-exp-item ul li::before {
+            content: ''; position: absolute; left: 0; top: 9px;
+            width: 5px; height: 5px; background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* Skills tags inside resume */
+        .resume-skills-group { margin-bottom: 16px; }
+        .resume-skills-group:last-child { margin-bottom: 0; }
+        .resume-skills-group h4 {
+            font-size: 0.92rem; font-weight: 600; color: var(--text-white); margin: 0 0 8px;
+        }
+        .resume-skills-group .skill-tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+        }
+        .resume-skills-group .skill-tag {
+            padding: 5px 14px; border-radius: 8px; font-size: 0.8rem;
+            background: rgba(91, 184, 208, 0.08); border: 1px solid rgba(91, 184, 208, 0.2);
+            color: var(--primary); font-weight: 500;
+        }
+
+        /* Certification items */
+        .cert-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0; border-bottom: 1px solid var(--border);
+            gap: 12px; flex-wrap: wrap;
+        }
+        .cert-item:last-child { border-bottom: none; }
+        .cert-item h4 { font-size: 0.92rem; font-weight: 600; color: var(--text-white); margin: 0; }
+        .cert-item .cert-org { font-size: 0.82rem; color: var(--text-muted); }
+        .cert-item .cert-date { font-size: 0.82rem; color: var(--primary); font-weight: 600; white-space: nowrap; }
+
+        /* Two PDF preview cards side by side */
+        .cv-preview-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;
+        }
+        .cv-preview-card {
             background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 20px; overflow: hidden; padding: 4px;
+            border-radius: 16px; overflow: hidden; text-align: center;
+            transition: all 0.3s;
         }
-        .cv-viewer iframe {
-            width: 100%; height: 700px; border: none; border-radius: 16px;
-            background: #fff;
+        .cv-preview-card:hover { border-color: var(--primary); }
+        .cv-preview-card h4 {
+            font-size: 0.95rem; font-weight: 600; color: var(--text-white);
+            padding: 16px 16px 8px; margin: 0;
         }
-        .cv-download-row {
-            display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;
+        .cv-preview-card h4 i { color: var(--primary); margin-right: 6px; }
+        .cv-preview-card iframe {
+            width: 100%; height: 280px; border: none; background: #fff;
+            pointer-events: none;
         }
+        .cv-preview-card .cv-card-actions {
+            padding: 12px 16px;
+            display: flex; gap: 8px; justify-content: center;
+        }
+        .cv-preview-card .btn-sm {
+            padding: 8px 18px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+            transition: all 0.3s; cursor: pointer;
+        }
+        .btn-sm.btn-dl {
+            background: var(--gradient-primary); color: #fff; border: none;
+        }
+        .btn-sm.btn-view {
+            background: transparent; color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        .btn-sm.btn-view:hover { background: rgba(91, 184, 208, 0.1); }
+
         @media (max-width: 768px) {
-            .cv-viewer iframe { height: 450px; }
-            .cv-tabs { justify-content: center; }
+            .cv-preview-row { grid-template-columns: 1fr; }
+            .resume-block { padding: 20px; }
+            .resume-exp-top { flex-direction: column; gap: 4px; }
         }
         @media (max-width: 480px) {
-            .cv-viewer iframe { height: 350px; }
-            .cv-download-row { flex-direction: column; }
-            .cv-download-row .btn { width: 100%; justify-content: center; }
+            .cv-preview-card iframe { height: 200px; }
+            .resume-block { padding: 16px; }
         }
 
         /* ===== EDUCATION ===== */
@@ -545,7 +650,7 @@
 
         /* ===== SMOOTH THEME TRANSITION ===== */
         body, header, section, footer, .service-card, .skill-item, .portfolio-card,
-        .edu-card, .cv-viewer, .cv-tab, .contact-form input, .contact-form textarea,
+        .edu-card, .resume-block, .cv-preview-card, .contact-form input, .contact-form textarea,
         .hero-socials a, .footer-socials a, .about-tags span, .btn-outline, .theme-toggle {
             transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
@@ -886,21 +991,244 @@
 <!-- ===== CV / RESUME VIEWER ===== -->
 <section id="cv">
     <div class="container">
-        <div class="fade-up">
+        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
             <span class="section-label"><i class='bx bx-file'></i> Resume</span>
-            <h2 class="section-title">View My Resume</h2>
-            <p class="section-subtitle">Browse my CV and bio data directly, or download for offline viewing.</p>
+            <h2 class="section-title">My Resume</h2>
+            <p class="section-subtitle">A detailed overview of my professional background, skills, and achievements.</p>
         </div>
-        <div class="cv-tabs fade-up">
-            <button class="cv-tab active" onclick="switchCV('job')">Job CV</button>
-            <button class="cv-tab" onclick="switchCV('bio')">Personal Bio Data</button>
+
+        <div class="resume-content">
+            <!-- Summary -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-user-circle'></i>
+                    <h3>Professional Summary</h3>
+                </div>
+                <p>Data-driven Web Developer & SEO Analyst with expertise in search trend research, competitor analysis, and audience insights. Applying technical development skills (Shopify, theme customization, performance optimization) to support content and business strategy.</p>
+            </div>
+
+            <!-- Experience -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-briefcase'></i>
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>Web Developer & SEO Analytics</h4>
+                        <span class="date">Jul 2026 — Present</span>
+                    </div>
+                    <div class="company">Style Maniacs — Dhaka</div>
+                    <div class="desc">Managing end-to-end Shopify development and SEO strategy for an e-commerce store, using search and audience data to guide content and product decisions.</div>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>Shopify Web Developer</h4>
+                        <span class="date">Feb 2026 — Jul 2026</span>
+                    </div>
+                    <div class="company">EcomClips — Mirpur, Dhaka</div>
+                    <div class="desc">Specializing in custom store design, theme customization, and conversion-focused eCommerce solutions. Building scalable, SEO-friendly, and high-performance Shopify stores.</div>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>Shopify Web Developer</h4>
+                        <span class="date">Dec 2025 — Jan 2026</span>
+                    </div>
+                    <div class="company">Betopia Group — Dhaka</div>
+                    <ul>
+                        <li>Customized and developed Shopify themes, templates, and layouts</li>
+                        <li>Implemented Shopify apps and extensions for enhanced functionality</li>
+                        <li>Ensured responsive, fast-loading websites across all devices</li>
+                        <li>Wrote clean HTML, CSS, and JavaScript for interactive interfaces</li>
+                    </ul>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>SEO Executive</h4>
+                        <span class="date">Aug 2025 — Dec 2025</span>
+                    </div>
+                    <div class="company">Bizcope Digital Ltd — Dhaka</div>
+                    <ul>
+                        <li>Improved website visibility through strategic SEO and keyword optimization</li>
+                        <li>Executed SEO campaigns and monitored analytics for organic traffic growth</li>
+                        <li>Boosted rankings via on-page/off-page SEO and targeted keyword strategies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-graduation'></i>
+                    <h3>Education</h3>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>MSc in Computer Science (AI Major)</h4>
+                        <span class="date">2021 — 2022</span>
+                    </div>
+                    <div class="company">American International University–Bangladesh (AIUB) — GPA: 3.56</div>
+                    <div class="desc">Focused on machine learning, data analysis, intelligent systems, and advanced computing with emphasis on problem-solving and real-world AI applications.</div>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>BSc in Computer Science & Engineering</h4>
+                        <span class="date">2015 — 2020</span>
+                    </div>
+                    <div class="company">North South University (NSU) — CGPA: 2.33</div>
+                    <div class="desc">Studied core CS fundamentals including programming, data structures, and web technologies.</div>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>Higher Secondary Certificate (HSC)</h4>
+                        <span class="date">2013</span>
+                    </div>
+                    <div class="company">Madan Mohan College — GPA: 4.20</div>
+                </div>
+                <div class="resume-exp-item">
+                    <div class="resume-exp-top">
+                        <h4>Secondary School Certificate (SSC)</h4>
+                        <span class="date">2011</span>
+                    </div>
+                    <div class="company">Jiroin Bohumukhi High School — GPA: 4.75</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Technical Skills</h3>
+                </div>
+                <div class="resume-skills-group">
+                    <h4><i class='bx bxl-shopify' style="color:var(--primary);margin-right:6px"></i>Shopify Engineering</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Shopify Ecosystem</span>
+                        <span class="skill-tag">Liquid Templating</span>
+                        <span class="skill-tag">Theme Development</span>
+                        <span class="skill-tag">App Development</span>
+                        <span class="skill-tag">Performance Optimization</span>
+                    </div>
+                </div>
+                <div class="resume-skills-group">
+                    <h4><i class='bx bx-code-curly' style="color:var(--primary);margin-right:6px"></i>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C / C++</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="resume-skills-group">
+                    <h4><i class='bx bx-search-alt' style="color:var(--primary);margin-right:6px"></i>SEO</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">On-Page SEO</span>
+                        <span class="skill-tag">Off-Page SEO</span>
+                        <span class="skill-tag">Keyword Research</span>
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">Content Optimization</span>
+                    </div>
+                </div>
+                <div class="resume-skills-group">
+                    <h4><i class='bx bx-bot' style="color:var(--primary);margin-right:6px"></i>AI & Automation</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Workflow Automation (n8n)</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">AI Tools</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+                <div class="resume-skills-group">
+                    <h4><i class='bx bx-bar-chart-alt-2' style="color:var(--primary);margin-right:6px"></i>Data & Analytics</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Google Search Console</span>
+                        <span class="skill-tag">SEMRush</span>
+                        <span class="skill-tag">Competitor Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-certification'></i>
+                    <h3>Certifications</h3>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <h4>Shopify Theme Development</h4>
+                        <span class="cert-org">Ostad</span>
+                    </div>
+                    <span class="cert-date">Nov 2025</span>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <h4>Certificate Program in Data Science</h4>
+                        <span class="cert-org">Ostad</span>
+                    </div>
+                    <span class="cert-date">2024</span>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <h4>Introduction to Data Science</h4>
+                        <span class="cert-org">Online Course</span>
+                    </div>
+                    <span class="cert-date">Nov 2022</span>
+                </div>
+                <div class="cert-item">
+                    <div>
+                        <h4>Introduction to Data Analytics</h4>
+                        <span class="cert-org">SkillUp by Simplilearn</span>
+                    </div>
+                    <span class="cert-date">Nov 2022</span>
+                </div>
+            </div>
+
+            <!-- Languages & Interests -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-globe'></i>
+                    <h3>Languages & Interests</h3>
+                </div>
+                <p><strong style="color:var(--text-white)">Languages:</strong> English (Fluent — Communication, Writing, Speaking) · Bengali (Mother Tongue)</p>
+                <p><strong style="color:var(--text-white)">Interests:</strong> Technology & Coding · Reading · Traveling · Photography · Cooking · Gaming · Volunteering · Sports · Creative Arts & Design</p>
+            </div>
+
+            <!-- Reference -->
+            <div class="resume-block fade-up">
+                <div class="resume-block-header">
+                    <i class='bx bx-user-check'></i>
+                    <h3>Reference</h3>
+                </div>
+                <p><strong style="color:var(--text-white)">Dr. Md. Ashraf Ali</strong><br>
+                Professor, Department of Computer Science<br>
+                American International University–Bangladesh (AIUB)<br>
+                <a href="mailto:ashrafali@aiub.edu" style="color:var(--primary)">ashrafali@aiub.edu</a></p>
+            </div>
         </div>
-        <div class="cv-viewer fade-up">
-            <iframe id="cv-frame" src="./assets/cv/ARIF_Job_CV.pdf" title="Resume Viewer"></iframe>
-        </div>
-        <div class="cv-download-row fade-up">
-            <a href="./assets/cv/ARIF_Job_CV.pdf" download class="btn btn-outline"><i class='bx bx-download'></i> Download Job CV</a>
-            <a href="./assets/cv/Arif_Marrage_Bio_Data.pdf" download class="btn btn-outline"><i class='bx bx-download'></i> Download Bio Data</a>
+
+        <!-- PDF Preview Cards -->
+        <div class="cv-preview-row fade-up">
+            <div class="cv-preview-card">
+                <h4><i class='bx bx-briefcase'></i> Job CV</h4>
+                <iframe src="./assets/cv/ARIF_Job_CV.pdf" title="Job CV Preview"></iframe>
+                <div class="cv-card-actions">
+                    <a href="./assets/cv/ARIF_Job_CV.pdf" target="_blank" class="btn-sm btn-view"><i class='bx bx-show'></i> View</a>
+                    <a href="./assets/cv/ARIF_Job_CV.pdf" download class="btn-sm btn-dl"><i class='bx bx-download'></i> Download</a>
+                </div>
+            </div>
+            <div class="cv-preview-card">
+                <h4><i class='bx bx-user'></i> Personal Bio Data</h4>
+                <iframe src="./assets/cv/Arif_Marrage_Bio_Data.pdf" title="Bio Data Preview"></iframe>
+                <div class="cv-card-actions">
+                    <a href="./assets/cv/Arif_Marrage_Bio_Data.pdf" target="_blank" class="btn-sm btn-view"><i class='bx bx-show'></i> View</a>
+                    <a href="./assets/cv/Arif_Marrage_Bio_Data.pdf" download class="btn-sm btn-dl"><i class='bx bx-download'></i> Download</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1113,18 +1441,7 @@
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // ===== CV TAB SWITCHING =====
-    function switchCV(type) {
-        const frame = document.getElementById('cv-frame');
-        const tabs = document.querySelectorAll('.cv-tab');
-        tabs.forEach(t => t.classList.remove('active'));
-        if (type === 'job') {
-            frame.src = './assets/cv/ARIF_Job_CV.pdf';
-            tabs[0].classList.add('active');
-        } else {
-            frame.src = './assets/cv/Arif_Marrage_Bio_Data.pdf';
-            tabs[1].classList.add('active');
-        }
-    }
+    // (switchCV removed — resume section now shows text content with PDF preview cards)
 </script>
 
 </body>
