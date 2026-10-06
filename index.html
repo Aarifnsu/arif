@@ -322,6 +322,26 @@
         .hire-card .tagline { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px; }
         @media (max-width: 900px) { .hire-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
 
+        /* ===== CERTIFICATIONS ===== */
+        .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .cert-card { overflow: hidden; cursor: zoom-in; display: flex; flex-direction: column; }
+        .cert-card .cert-img { position: relative; background: #fff; border-bottom: 1px solid var(--card-border); aspect-ratio: 1.414 / 1; overflow: hidden; }
+        .cert-card .cert-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s; }
+        .cert-card:hover .cert-img img { transform: scale(1.03); }
+        .cert-card .cert-img .zoom { position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border-radius: 10px; background: rgba(12,25,41,0.8); color: var(--cyan-glow); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; opacity: 0; transition: opacity 0.3s; }
+        .cert-card:hover .cert-img .zoom { opacity: 1; }
+        .cert-card .cert-body { padding: 16px 18px 18px; }
+        .cert-card .cert-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; line-height: 1.3; }
+        .cert-card .cert-body p { font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .cert-card .cert-body p i { color: var(--neon-cyan); }
+        @media (max-width: 1024px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .cert-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+        .lightbox { position: fixed; inset: 0; z-index: 2000; background: rgba(5,12,22,0.92); display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(6px); }
+        .lightbox.open { display: flex; }
+        .lightbox img { max-width: 100%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); background: #fff; }
+        .lightbox .lb-close { position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--card-border); color: #fff; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .lightbox .lb-cap { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: #b0c4de; font-size: 0.9rem; text-align: center; padding: 0 20px; }
+
         /* ===== RESUME ===== */
         .resume-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
         .resume-block { padding: 28px; margin-bottom: 20px; }
@@ -401,6 +421,7 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#certifications" class="nav-link">Certificates</a>
             <a href="#resume" class="nav-link">Resume</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
@@ -753,8 +774,46 @@
     </div>
 </section>
 
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications">
+    <div class="container">
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-certification'></i> Certifications</span>
+            <h2 class="section-title">Professional Certifications</h2>
+            <p class="section-subtitle">Verified training in Shopify development, SEO, AI and data — click any certificate to view it full size.</p>
+        </div>
+        <div class="cert-grid">
+            <div class="card cert-card fade-up" data-full="./assets/certs/figma-shopify.webp" data-cap="Figma to Shopify Single Landing Page Development — Go Pickle · Mar 2026">
+                <div class="cert-img"><img src="./assets/certs/figma-shopify.webp" alt="Figma to Shopify Landing Page Development certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>Figma to Shopify Landing Page Development</h3><p><i class='bx bx-buildings'></i> Go Pickle · Farid Rony <span>•</span> <i class='bx bx-calendar'></i> Mar 2026</p></div>
+            </div>
+            <div class="card cert-card fade-up" data-full="./assets/certs/shopify-theme.webp" data-cap="Shopify Theme Development — Ostad · Nov 2025">
+                <div class="cert-img"><img src="./assets/certs/shopify-theme.webp" alt="Shopify Theme Development certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>Shopify Theme Development</h3><p><i class='bx bx-buildings'></i> Ostad <span>•</span> <i class='bx bx-calendar'></i> Nov 2025</p></div>
+            </div>
+            <div class="card cert-card fade-up" data-full="./assets/certs/seo-adsense.webp" data-cap="SEO with Google AdSense — UY LAB · Aug 2025">
+                <div class="cert-img"><img src="./assets/certs/seo-adsense.webp" alt="SEO with Google AdSense certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>SEO with Google AdSense</h3><p><i class='bx bx-buildings'></i> UY LAB <span>•</span> <i class='bx bx-calendar'></i> Aug 2025</p></div>
+            </div>
+            <div class="card cert-card fade-up" data-full="./assets/certs/intro-ai.webp" data-cap="Introduction to Artificial Intelligence — SkillUp by Simplilearn · Nov 2022">
+                <div class="cert-img"><img src="./assets/certs/intro-ai.webp" alt="Introduction to Artificial Intelligence certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>Introduction to Artificial Intelligence</h3><p><i class='bx bx-buildings'></i> SkillUp by Simplilearn <span>•</span> <i class='bx bx-calendar'></i> Nov 2022</p></div>
+            </div>
+            <div class="card cert-card fade-up" data-full="./assets/certs/intro-data-science.webp" data-cap="Introduction to Data Science — SkillUp by Simplilearn · Nov 2022">
+                <div class="cert-img"><img src="./assets/certs/intro-data-science.webp" alt="Introduction to Data Science certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>Introduction to Data Science</h3><p><i class='bx bx-buildings'></i> SkillUp by Simplilearn <span>•</span> <i class='bx bx-calendar'></i> Nov 2022</p></div>
+            </div>
+            <div class="card cert-card fade-up" data-full="./assets/certs/intro-data-analytics.webp" data-cap="Introduction to Data Analytics — SkillUp by Simplilearn · Nov 2022">
+                <div class="cert-img"><img src="./assets/certs/intro-data-analytics.webp" alt="Introduction to Data Analytics certificate" loading="lazy"><span class="zoom"><i class='bx bx-expand-alt'></i></span></div>
+                <div class="cert-body"><h3>Introduction to Data Analytics</h3><p><i class='bx bx-buildings'></i> SkillUp by Simplilearn <span>•</span> <i class='bx bx-calendar'></i> Nov 2022</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><button class="lb-close" id="lb-close" aria-label="Close">&times;</button><img id="lb-img" src="" alt="Certificate"><div class="lb-cap" id="lb-cap"></div></div>
+
 <!-- ===== RESUME ===== -->
-<section id="resume">
+<section id="resume" class="section-alt">
     <div class="container">
         <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-file'></i> Resume</span>
@@ -828,7 +887,7 @@
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact" class="section-alt">
+<section id="contact">
     <div class="container">
         <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-message-dots'></i> Contact</span>
@@ -941,6 +1000,16 @@
             });
         });
     });
+
+    // Certificate lightbox
+    const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+    document.querySelectorAll('.cert-card').forEach(c => c.addEventListener('click', () => {
+        lbImg.src = c.dataset.full; lbCap.textContent = c.dataset.cap; lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    }));
+    function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('lb-close').addEventListener('click', closeLb);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
