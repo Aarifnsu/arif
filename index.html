@@ -1,661 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Ariful Islam — AI Automation & Shopify Expert</title>
-    <meta name="description" content="Portfolio of MD Ariful Islam — AI Automation & Prompt Engineer, Shopify & Ecommerce Developer, SEO Analyst based in Dhaka, Bangladesh.">
+    <title>MD Ariful Islam — AI Automation, Shopify &amp; SEO Expert</title>
+    <meta name="description" content="Freelance AI Automation Expert, Shopify Developer (A–Z) and SEO Specialist from Dhaka, Bangladesh. 3+ years, 50+ projects, 30+ happy clients. Available on Upwork, Fiverr and SEOClerk.">
+    <meta property="og:title" content="MD Ariful Islam — AI Automation, Shopify & SEO Expert">
+    <meta property="og:description" content="I build AI automations, high-converting Shopify stores and SEO growth systems for businesses worldwide.">
+    <meta property="og:image" content="./home.png">
     <link rel="icon" href="./logo-icon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-padding-top: 80px; }
         body {
-            font-family: 'Inter', 'Poppins', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-gray);
-            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            background-attachment: fixed;
+            color: var(--text-secondary);
+            line-height: 1.65;
             overflow-x: hidden;
         }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
-        @media (min-width: 1600px) { .container { max-width: 1400px; } }
-        @media (min-width: 1920px) { .container { max-width: 1600px; } }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
 
-        /* ===== COLOR TOKENS (Dark — default) ===== */
+        /* ===== COLOR TOKENS — matches arif-automation-hub.pages.dev ===== */
         :root, [data-theme="dark"] {
-            --primary: #5bb8d0;
-            --primary-glow: rgba(91, 184, 208, 0.3);
-            --accent: #f5a623;
-            --accent-glow: rgba(245, 166, 35, 0.25);
-            --bg-dark: #0a0f1e;
-            --bg-section-alt: #0d1224;
-            --bg-card: #141a2e;
-            --bg-card-hover: #1a2240;
-            --border: rgba(255,255,255,0.1);
-            --text-white: #f4f6fc;
-            --text-gray: #b0b5cc;
-            --text-muted: #7a80a0;
-            --gradient-primary: linear-gradient(135deg, #5bb8d0, #7c7ff5);
-            --gradient-accent: linear-gradient(135deg, #f5a623, #f06449);
-            --header-bg: rgba(10, 15, 30, 0.92);
-            --card-shadow: rgba(0,0,0,0.3);
-            --img-brightness: 0.95;
+            --bg-primary: #0c1929;
+            --bg-secondary: #0f2035;
+            --bg-card: #132742;
+            --bg-card-hover: #183050;
+            --card-border: #1e3a5f;
+            --text-primary: #ffffff;
+            --text-secondary: #b0c4de;
+            --text-muted: #7a9cc6;
+            --nav-bg: rgba(12, 25, 41, 0.9);
+            --electric-blue: #2563eb;
+            --neon-cyan: #06b6d4;
+            --cyan-glow: #22d3ee;
+            --gradient-blue: linear-gradient(135deg, #2563eb, #06b6d4);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --shadow-glow: rgba(37, 99, 235, 0.15);
+            --hero-glow1: rgba(37, 99, 235, 0.14);
+            --hero-glow2: rgba(6, 182, 212, 0.1);
+            --grid-line: rgba(37, 99, 235, 0.05);
+            --chip-bg: rgba(6, 182, 212, 0.12);
+            --chip-border: rgba(6, 182, 212, 0.3);
         }
-        /* ===== COLOR TOKENS (Light) ===== */
         [data-theme="light"] {
-            --primary: #2a8fa8;
-            --primary-glow: rgba(42, 143, 168, 0.2);
-            --accent: #d48b0a;
-            --accent-glow: rgba(212, 139, 10, 0.15);
-            --bg-dark: #f5f7fb;
-            --bg-section-alt: #edf0f7;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f0f2f8;
-            --border: rgba(0,0,0,0.1);
-            --text-white: #1a1d2e;
-            --text-gray: #4a4f6a;
-            --text-muted: #8890a8;
-            --gradient-primary: linear-gradient(135deg, #2a8fa8, #5b5ef0);
-            --gradient-accent: linear-gradient(135deg, #d48b0a, #d04a30);
-            --header-bg: rgba(245, 247, 251, 0.92);
-            --card-shadow: rgba(0,0,0,0.08);
-            --img-brightness: 1;
+            --bg-primary: linear-gradient(135deg, #dbeafe 0%, #cffafe 100%);
+            --bg-secondary: linear-gradient(135deg, #c7ddfb 0%, #bdf0f8 100%);
+            --bg-card: rgba(255, 255, 255, 0.6);
+            --bg-card-hover: rgba(255, 255, 255, 0.78);
+            --card-border: rgba(37, 99, 235, 0.22);
+            --text-primary: #0c1929;
+            --text-secondary: #335577;
+            --text-muted: #5a7aa3;
+            --nav-bg: rgba(219, 234, 254, 0.85);
+            --electric-blue: #2563eb;
+            --neon-cyan: #0891b2;
+            --cyan-glow: #0e7490;
+            --gradient-blue: linear-gradient(135deg, #2563eb, #0891b2);
+            --shadow-color: rgba(37, 99, 235, 0.1);
+            --shadow-glow: rgba(37, 99, 235, 0.16);
+            --hero-glow1: rgba(37, 99, 235, 0.1);
+            --hero-glow2: rgba(6, 182, 212, 0.08);
+            --grid-line: rgba(37, 99, 235, 0.06);
+            --chip-bg: rgba(8, 145, 178, 0.1);
+            --chip-border: rgba(8, 145, 178, 0.3);
+        }
+        [data-theme="light"] .card { backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+
+        .gradient-text {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
 
-        /* ===== HEADER / NAV ===== */
+        /* ===== HEADER ===== */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: var(--header-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.4s, border-color 0.4s;
+            background: var(--nav-bg); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
         }
-        header .container {
-            display: flex; align-items: center; justify-content: space-between;
-            height: 72px;
-        }
-        .logo {
-            display: flex; align-items: center; gap: 10px;
-            font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.3rem;
-            color: var(--text-white); flex-shrink: 0;
-        }
+        header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-primary); flex-shrink: 0; }
         .logo img { width: 40px; height: 40px; border-radius: 50%; }
-        .logo span { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        nav { display: flex; align-items: center; gap: 6px; flex: 1; justify-content: center; }
-        nav a {
-            padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
-            color: var(--text-gray); transition: all 0.3s; white-space: nowrap;
-        }
-        nav a:hover, nav a.active { color: var(--text-white); background: rgba(255,255,255,0.08); }
-
+        nav { display: flex; align-items: center; gap: 4px; }
+        nav a { padding: 9px 16px; border-radius: 999px; font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: all 0.3s; white-space: nowrap; }
+        nav a:hover, nav a.active { color: var(--text-primary); background: var(--bg-card); }
         .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-
         .theme-toggle {
-            background: var(--bg-card); border: 1px solid var(--border);
-            color: var(--text-gray); width: 42px; height: 42px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
+            background: var(--bg-card); border: 1px solid var(--card-border); color: var(--text-secondary);
+            width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
             font-size: 1.2rem; cursor: pointer; transition: all 0.3s;
         }
-        .theme-toggle:hover { color: var(--primary); border-color: var(--primary); }
-
-        .menu-toggle {
-            display: none; background: none; border: none; color: var(--text-white);
-            font-size: 1.8rem; cursor: pointer;
-        }
-
-        /* Tablet nav */
-        @media (max-width: 1024px) {
-            nav { gap: 2px; }
-            nav a { padding: 8px 14px; font-size: 0.85rem; }
-        }
-        /* Mobile nav */
+        .theme-toggle:hover { color: var(--neon-cyan); border-color: var(--neon-cyan); }
+        .menu-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.8rem; cursor: pointer; }
+        .nav-cta { display: inline-flex; }
+        @media (max-width: 1024px) { nav a { padding: 8px 12px; font-size: 0.85rem; } .nav-cta { display: none; } }
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             nav {
-                position: fixed; top: 72px; left: 0; width: 100%;
-                flex-direction: column; padding: 24px 20px; gap: 4px;
-                background: var(--header-bg); backdrop-filter: blur(20px);
-                border-bottom: 1px solid var(--border);
+                position: fixed; top: 72px; left: 0; width: 100%; flex-direction: column; padding: 20px; gap: 4px;
+                background: var(--nav-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--card-border);
                 transform: translateY(-120%); transition: transform 0.35s ease;
             }
             nav.active { transform: translateY(0); }
-            nav a { width: 100%; text-align: center; padding: 16px 20px; font-size: 1rem; border-radius: 10px; }
-            nav a:hover, nav a.active { background: rgba(91,184,208,0.12); }
+            nav a { width: 100%; text-align: center; padding: 14px; font-size: 1rem; border-radius: 10px; }
         }
 
         /* ===== SECTION COMMON ===== */
-        section { padding: 60px 0; }
-        @media (min-width: 1200px) { section { padding: 72px 0; } }
-        @media (max-width: 768px) { section { padding: 48px 0; } }
-        @media (max-width: 480px) { section { padding: 36px 0; } }
+        section { padding: 72px 0; position: relative; }
+        @media (max-width: 1024px) { section { padding: 56px 0; } }
+        @media (max-width: 640px) { section { padding: 44px 0; } }
+        .section-alt { background: var(--bg-secondary); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+        .section-head { text-align: center; max-width: 720px; margin: 0 auto 44px; }
         .section-label {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-            color: var(--primary); margin-bottom: 12px;
+            display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--neon-cyan); background: var(--chip-bg); border: 1px solid var(--chip-border); margin-bottom: 14px;
         }
-        .section-label i { font-size: 1rem; }
-        .section-title {
-            font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 700; color: var(--text-white); margin-bottom: 16px; line-height: 1.25;
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 700; color: var(--text-primary); line-height: 1.2; margin-bottom: 14px; }
+        .section-subtitle { font-size: 1.05rem; color: var(--text-secondary); }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 12px;
+            font-size: 0.95rem; font-weight: 600; transition: all 0.3s; cursor: pointer; border: none; white-space: nowrap;
         }
-        .section-subtitle { font-size: 1.05rem; color: var(--text-gray); max-width: 600px; margin-bottom: 36px; }
+        .btn-primary { background: var(--gradient-blue); color: #fff; box-shadow: 0 4px 20px var(--shadow-glow); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.35); }
+        .btn-outline { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--card-border); }
+        .btn-outline:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+        .btn-whatsapp { background: #25d366; color: #fff; }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+        .btn-sm { padding: 9px 16px; font-size: 0.85rem; border-radius: 10px; }
+
+        .card {
+            background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px;
+            box-shadow: 0 4px 24px var(--shadow-color); transition: all 0.35s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--neon-cyan); box-shadow: 0 10px 32px var(--shadow-color), 0 0 0 1px var(--shadow-glow); }
 
         /* ===== HERO ===== */
-        #hero {
-            min-height: 100vh; align-items: center;
-            position: relative; overflow: hidden;
-            padding-top: 72px;
+        #hero { min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 96px; padding-bottom: 60px;
+            background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 48px 48px; }
+        #hero::before { content: ''; position: absolute; top: -200px; right: -150px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, var(--hero-glow1), transparent 70%); pointer-events: none; }
+        #hero::after { content: ''; position: absolute; bottom: -200px; left: -150px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, var(--hero-glow2), transparent 70%); pointer-events: none; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; color: var(--neon-cyan); background: var(--chip-bg); border: 1px solid var(--chip-border); margin-bottom: 20px; }
+        .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,0.25); animation: pulse 1.8s infinite; }
+        @keyframes pulse { 0%,100% { box-shadow: 0 0 0 4px rgba(34,197,94,0.25);} 50% { box-shadow: 0 0 0 8px rgba(34,197,94,0.05);} }
+        .hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.3rem, 5vw, 3.6rem); font-weight: 700; color: var(--text-primary); line-height: 1.12; margin-bottom: 14px; }
+        .hero-text .roles { font-size: 1.05rem; color: var(--text-primary); font-weight: 500; margin-bottom: 18px; display: flex; flex-wrap: wrap; gap: 8px 14px; }
+        .hero-text .roles span { display: inline-flex; align-items: center; gap: 6px; }
+        .hero-text .roles i { color: var(--neon-cyan); }
+        .hero-text p.lead { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 28px; max-width: 560px; }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+        .hire-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .hire-row .lbl { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+        .mp-pill {
+            display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+            background: var(--bg-card); border: 1px solid var(--card-border); color: var(--text-primary); transition: all 0.3s;
         }
-        #hero::before {
-            content: ''; position: absolute; top: -200px; right: -200px;
-            width: 600px; height: 600px; border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-glow), transparent 70%);
-            pointer-events: none;
-        }
-        #hero::after {
-            content: ''; position: absolute; bottom: -150px; left: -100px;
-            width: 400px; height: 400px; border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
-            pointer-events: none;
-        }
-        .hero-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-            align-items: center; position: relative; z-index: 1;
-        }
-        .hero-text h1 {
-            font-family: 'Poppins', sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 800; color: var(--text-white); line-height: 1.2; margin-bottom: 8px;
-        }
-        .hero-text .greeting {
-            font-size: 1.1rem; color: var(--primary); font-weight: 500; margin-bottom: 8px;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .hero-text .roles {
-            font-size: 1.05rem; color: var(--accent); font-weight: 500; margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 1.05rem; color: var(--text-gray); margin-bottom: 32px; max-width: 500px;
-        }
-        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 12px 28px; border-radius: 10px; font-size: 0.95rem;
-            font-weight: 600; transition: all 0.3s; cursor: pointer; border: none;
-        }
-        .btn-primary {
-            background: var(--gradient-primary); color: #fff;
-            box-shadow: 0 4px 20px var(--primary-glow);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--primary-glow); }
-        .btn-outline {
-            background: transparent; color: var(--text-white);
-            border: 1.5px solid var(--border);
-        }
-        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-        .hero-socials { display: flex; gap: 12px; }
-        .hero-socials a {
-            width: 42px; height: 42px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--bg-card); border: 1px solid var(--border);
-            color: var(--text-gray); font-size: 1.2rem; transition: all 0.3s;
-        }
-        .hero-socials a:hover { color: var(--primary); border-color: var(--primary); transform: translateY(-3px); }
+        .mp-pill:hover { border-color: var(--neon-cyan); transform: translateY(-2px); }
+        .mp-pill .mp-ic { width: 20px; height: 20px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; font-family: 'Space Grotesk', sans-serif; }
+        .mp-upwork { background: #14a800; }
+        .mp-fiverr { background: #1dbf73; }
+        .mp-seoclerk { background: #2563eb; }
 
         .hero-image { display: flex; justify-content: center; }
-        .hero-image-wrapper {
-            position: relative; width: 380px; height: 460px;
-        }
-        .hero-image-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; object-position: top;
-            border-radius: 24px;
-            border: 2px solid rgba(255,255,255,0.12);
-        }
-        .hero-image-wrapper::before {
-            content: ''; position: absolute; inset: -4px; border-radius: 28px;
-            background: var(--gradient-primary); z-index: -1; opacity: 0.3;
-        }
+        .hero-image-wrapper { position: relative; width: 380px; height: 480px; }
+        .hero-image-wrapper .ring { position: absolute; inset: 0; border-radius: 32px; background: var(--gradient-blue); opacity: 0.18; transform: rotate(-4deg); }
+        .hero-image-wrapper .frame { position: absolute; inset: 0; border-radius: 28px; background: var(--bg-card); border: 1px solid var(--card-border); overflow: hidden; box-shadow: 0 20px 60px var(--shadow-color); }
+        .hero-image-wrapper .frame::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 20%, var(--hero-glow1), transparent 65%); }
+        .hero-image-wrapper img { position: relative; width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
         .hero-stats {
-            position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
-            display: flex; gap: 0;
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 16px; padding: 0; overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            position: absolute; bottom: -34px; left: 50%; transform: translateX(-50%); display: flex;
+            background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow-color); backdrop-filter: blur(10px);
         }
-        .hero-stats .stat {
-            text-align: center; padding: 16px 28px;
-        }
-        .hero-stats .stat + .stat { border-left: 1px solid var(--border); }
-        .hero-stats .stat-num {
-            font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700;
-            color: var(--primary);
-        }
-        .hero-stats .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        @media (max-width: 1024px) {
-            .hero-grid { gap: 40px; }
-            .hero-image-wrapper { width: 320px; height: 400px; }
-        }
+        .hero-stats .stat { text-align: center; padding: 14px 22px; }
+        .hero-stats .stat + .stat { border-left: 1px solid var(--card-border); }
+        .hero-stats .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 700; }
+        .hero-stats .stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+        @media (max-width: 1024px) { .hero-grid { gap: 36px; } .hero-image-wrapper { width: 320px; height: 410px; } }
         @media (max-width: 768px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 36px; }
-            .hero-text p { margin-left: auto; margin-right: auto; }
-            .hero-text .greeting { justify-content: center; }
-            .hero-btns { justify-content: center; }
-            .hero-socials { justify-content: center; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 56px; }
+            .hero-text p.lead { margin-left: auto; margin-right: auto; }
+            .hero-btns, .hire-row, .hero-text .roles { justify-content: center; }
             .hero-image { order: -1; }
-            .hero-image-wrapper { width: 240px; height: 300px; }
-            .hero-stats .stat { padding: 12px 18px; }
-            .hero-stats .stat-num { font-size: 1.1rem; }
+            .hero-image-wrapper { width: 260px; height: 330px; }
+            .hero-stats .stat { padding: 10px 14px; }
+            .hero-stats .stat-num { font-size: 1.05rem; }
         }
         @media (max-width: 480px) {
-            .hero-image-wrapper { width: 200px; height: 260px; }
-            .hero-stats .stat { padding: 10px 14px; }
-            .hero-stats .stat-num { font-size: 1rem; }
-            .hero-stats .stat-label { font-size: 0.65rem; }
-            .hero-text h1 { font-size: 1.8rem; }
-            .hero-btns { flex-direction: column; align-items: center; }
-            .btn { width: 100%; justify-content: center; }
+            .hero-btns { flex-direction: column; }
+            .hero-btns .btn { width: 100%; justify-content: center; }
+            .hero-stats { width: max-content; }
         }
+
+        /* ===== TRUSTED BY MARQUEE ===== */
+        #trusted { padding: 44px 0; overflow: hidden; }
+        .trusted-head { text-align: center; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; color: var(--text-muted); margin-bottom: 28px; }
+        .marquee { position: relative; }
+        .marquee::before, .marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 90px; z-index: 2; pointer-events: none; }
+        .marquee::before { left: 0; background: linear-gradient(to right, var(--bg-secondary), transparent); }
+        .marquee::after { right: 0; background: linear-gradient(to left, var(--bg-secondary), transparent); }
+        .marquee-track { display: flex; align-items: center; width: max-content; animation: marquee 12s linear infinite; }
+        @media (min-width: 768px) { .marquee-track { animation-duration: 30s; } }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .logo-item { display: flex; align-items: center; gap: 12px; padding: 0 28px; flex-shrink: 0; }
+        @media (min-width: 768px) { .logo-item { padding: 0 40px; } }
+        .logo-item .ic { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border: 1px solid var(--card-border); color: var(--neon-cyan); box-shadow: 0 2px 10px var(--shadow-color); }
+        .logo-item span { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; color: var(--text-muted); white-space: nowrap; }
 
         /* ===== ABOUT ===== */
-        #about { background: var(--bg-dark); }
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-        }
-        .about-images {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-        }
-        .about-images img {
-            border-radius: 16px; height: 200px; object-fit: cover;
-            border: 1px solid rgba(255,255,255,0.12); transition: transform 0.3s;
-            filter: brightness(0.95);
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+        .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .about-images img { border-radius: 16px; height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--card-border); transition: transform 0.3s; }
         .about-images img:hover { transform: scale(1.03); }
         .about-images img:first-child { grid-column: 1 / -1; height: 240px; }
-        .about-content h3 { color: var(--text-white); font-size: 1.1rem; margin-bottom: 12px; font-weight: 600; }
-        .about-content p { margin-bottom: 20px; }
-        .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-        .about-tags span {
-            padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
-            background: rgba(91, 184, 208, 0.12); color: var(--primary);
-            border: 1px solid rgba(91, 184, 208, 0.25);
-        }
-        @media (max-width: 1024px) {
-            .about-grid { gap: 40px; }
-        }
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; gap: 32px; }
-            .about-images img:first-child { height: 200px; }
-            .about-images img { height: 160px; }
-        }
+        .about-content p { margin-bottom: 16px; }
+        .about-points { display: grid; gap: 10px; margin: 20px 0; }
+        .about-points li { display: flex; gap: 10px; align-items: flex-start; color: var(--text-secondary); font-size: 0.95rem; }
+        .about-points i { color: var(--neon-cyan); font-size: 1.2rem; margin-top: 2px; }
+        .about-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .about-tags span { padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 500; background: var(--chip-bg); color: var(--neon-cyan); border: 1px solid var(--chip-border); }
+        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } .about-images img { height: 150px; } .about-images img:first-child { height: 200px; } }
 
         /* ===== SERVICES ===== */
-        #services { background: linear-gradient(180deg, var(--bg-dark), var(--bg-section-alt)); }
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .service-card {
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 20px; overflow: hidden; transition: all 0.4s;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-        }
-        .service-card:hover { transform: translateY(-6px); border-color: rgba(91,184,208,0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-        .service-card-img {
-            height: 200px; overflow: hidden;
-        }
+        .service-card { overflow: hidden; display: flex; flex-direction: column; }
+        .service-card-img { height: 190px; overflow: hidden; background: #0c1929; }
         .service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .service-card:hover .service-card-img img { transform: scale(1.08); }
-        .service-card-body { padding: 28px; }
-        .service-card-body .icon {
-            width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center;
-            justify-content: center; font-size: 1.5rem; margin-bottom: 18px;
-            background: var(--gradient-primary); color: #fff;
-        }
-        .service-card-body h3 {
-            font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 600;
-            color: var(--text-white); margin-bottom: 10px;
-        }
-        .service-card-body p { font-size: 0.92rem; color: var(--text-gray); line-height: 1.6; }
-        @media (max-width: 1024px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-        }
+        .service-card:hover .service-card-img img { transform: scale(1.06); }
+        .service-card-body { padding: 26px; flex: 1; display: flex; flex-direction: column; }
+        .service-card-body .icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px; background: var(--gradient-blue); color: #fff; margin-top: -51px; position: relative; border: 3px solid var(--bg-card); }
+        .service-card-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+        .service-card-body p { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 16px; }
+        .service-card-body ul { display: grid; gap: 8px; margin-top: auto; }
+        .service-card-body li { display: flex; gap: 8px; align-items: flex-start; font-size: 0.88rem; color: var(--text-secondary); }
+        .service-card-body li i { color: var(--neon-cyan); margin-top: 3px; }
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
 
-        /* ===== EXPERIENCE ===== */
-        #experience { background: var(--bg-section-alt); }
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::before {
-            content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
-            width: 2px; background: linear-gradient(to bottom, var(--primary), transparent);
-        }
-        .timeline-item {
-            position: relative; padding-left: 60px; margin-bottom: 40px;
-        }
-        .timeline-item::before {
-            content: ''; position: absolute; left: 14px; top: 6px;
-            width: 14px; height: 14px; border-radius: 50%;
-            background: var(--primary); border: 3px solid var(--bg-dark);
-        }
-        .timeline-item .date {
-            font-size: 0.8rem; font-weight: 600; color: var(--primary);
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
-        }
-        .timeline-item h3 {
-            font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600;
-            color: var(--text-white); margin-bottom: 4px;
-        }
-        .timeline-item .company { font-size: 0.9rem; color: var(--accent); margin-bottom: 8px; font-weight: 500; }
-        .timeline-item p { font-size: 0.9rem; color: var(--text-gray); line-height: 1.6; }
-
-        /* ===== SKILLS ===== */
-        #skills { background: var(--bg-dark); }
-        .skills-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-        @media (max-width: 768px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 480px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-        .skill-item {
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px;
-            padding: 24px 16px; text-align: center; transition: all 0.3s;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-        }
-        .skill-item:hover { border-color: rgba(91,184,208,0.35); transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-        .skill-item i {
-            font-size: 2rem; margin-bottom: 10px; color: var(--primary);
-        }
-        .skill-item span {
-            display: block; font-size: 0.85rem; font-weight: 500; color: var(--text-white);
-        }
+        /* ===== WHY ME ===== */
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .why-card { padding: 26px 22px; }
+        .why-card .icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; background: var(--chip-bg); color: var(--neon-cyan); border: 1px solid var(--chip-border); margin-bottom: 14px; }
+        .why-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 6px; }
+        .why-card p { font-size: 0.88rem; color: var(--text-secondary); }
+        @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .why-grid { grid-template-columns: 1fr; } }
 
         /* ===== PORTFOLIO ===== */
-        #portfolio { background: linear-gradient(180deg, var(--bg-dark), var(--bg-section-alt)); }
-        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .portfolio-card {
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px; overflow: hidden; transition: all 0.4s;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-        }
-        .portfolio-card:hover { transform: translateY(-6px); border-color: rgba(91,184,208,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-        .portfolio-card-img { height: 200px; overflow: hidden; position: relative; }
+        .filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 32px; }
+        .filter-btn { padding: 8px 18px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; background: var(--bg-card); border: 1px solid var(--card-border); color: var(--text-secondary); cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .filter-btn:hover { color: var(--text-primary); }
+        .filter-btn.active { background: var(--gradient-blue); color: #fff; border-color: transparent; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+        .portfolio-card { overflow: hidden; display: flex; flex-direction: column; }
+        .portfolio-card.hide { display: none; }
+        .portfolio-card-img { height: 170px; overflow: hidden; position: relative; background: #0c1929; }
         .portfolio-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .portfolio-card:hover .portfolio-card-img img { transform: scale(1.08); }
-        .portfolio-card-img .overlay {
-            position: absolute; inset: 0; background: rgba(5,8,22,0.6);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .portfolio-card:hover .portfolio-card-img .overlay { opacity: 1; }
-        .overlay a {
-            width: 44px; height: 44px; border-radius: 50%; background: var(--primary);
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 1.2rem; margin: 0 6px; transition: transform 0.2s;
-        }
-        .overlay a:hover { transform: scale(1.15); }
-        .portfolio-card-body { padding: 22px; }
-        .portfolio-card-body .tag {
-            font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--primary); margin-bottom: 8px;
-        }
-        .portfolio-card-body h3 {
-            font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 600;
-            color: var(--text-white); margin-bottom: 6px;
-        }
-        .portfolio-card-body p { font-size: 0.85rem; color: var(--text-gray); }
-        @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 550px) { .portfolio-grid { grid-template-columns: 1fr; } }
+        .portfolio-card:hover .portfolio-card-img img { transform: scale(1.07); }
+        .portfolio-card-img .badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: rgba(12,25,41,0.8); color: var(--cyan-glow); border: 1px solid rgba(6,182,212,0.4); backdrop-filter: blur(6px); }
+        .portfolio-card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+        .portfolio-card-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .portfolio-card-body p { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 14px; }
+        .portfolio-card-body .result { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--card-border); font-size: 0.82rem; font-weight: 600; color: var(--neon-cyan); }
+        .portfolio-card-body .result i { font-size: 1rem; }
+        .portfolio-card-body .link { margin-left: auto; color: var(--text-muted); font-weight: 500; }
+        .portfolio-card-body .link:hover { color: var(--neon-cyan); }
+        @media (max-width: 1100px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 860px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
-        /* ===== RESUME SECTION ===== */
-        #cv { background: var(--bg-section-alt); }
+        /* ===== PROCESS ===== */
+        .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; position: relative; }
+        .process-step { padding: 24px 18px; text-align: center; position: relative; }
+        .process-step .num { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; background: var(--gradient-blue); color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; box-shadow: 0 4px 16px var(--shadow-glow); }
+        .process-step h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: var(--text-primary); margin-bottom: 6px; }
+        .process-step p { font-size: 0.84rem; color: var(--text-secondary); }
+        @media (max-width: 1024px) { .process-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 600px) { .process-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 420px) { .process-grid { grid-template-columns: 1fr; } }
 
-        /* Resume text content */
-        .resume-content { margin-bottom: 48px; }
-        .resume-block {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        .resume-block:hover { border-color: var(--primary); }
-        .resume-block-header {
-            display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
-            padding-bottom: 12px; border-bottom: 1px solid var(--border);
-        }
-        .resume-block-header i {
-            font-size: 1.4rem; color: var(--primary);
-            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-            background: rgba(91, 184, 208, 0.1); border-radius: 10px; flex-shrink: 0;
-        }
-        .resume-block-header h3 {
-            font-size: 1.15rem; font-weight: 700; color: var(--text-white); margin: 0;
-        }
-        .resume-block p {
-            color: var(--text-gray); font-size: 0.92rem; line-height: 1.7; margin: 0 0 8px;
-        }
-        .resume-block p:last-child { margin-bottom: 0; }
+        /* ===== SKILLS ===== */
+        .skills-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .skill-group { padding: 24px; }
+        .skill-group h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; color: var(--text-primary); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+        .skill-group h3 i { color: var(--neon-cyan); font-size: 1.3rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { padding: 6px 13px; border-radius: 8px; font-size: 0.8rem; font-weight: 500; background: var(--chip-bg); border: 1px solid var(--chip-border); color: var(--text-primary); }
+        @media (max-width: 900px) { .skills-groups { grid-template-columns: 1fr; } }
 
-        /* Resume experience items */
-        .resume-exp-item {
-            padding: 14px 0; border-bottom: 1px solid var(--border);
-        }
+        /* ===== TESTIMONIALS ===== */
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .testi-card { padding: 28px; display: flex; flex-direction: column; }
+        .testi-card .stars { color: #f59e0b; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+        .testi-card blockquote { font-size: 0.95rem; color: var(--text-secondary); font-style: italic; margin-bottom: 20px; flex: 1; }
+        .testi-card .who { display: flex; align-items: center; gap: 12px; }
+        .testi-card .avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--gradient-blue); color: #fff; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+        .testi-card .who strong { display: block; color: var(--text-primary); font-size: 0.95rem; }
+        .testi-card .who small { color: var(--text-muted); font-size: 0.8rem; }
+        @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }
+
+        /* ===== HIRE ME ===== */
+        .hire-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .hire-card { padding: 30px 26px; text-align: center; }
+        .hire-card .mp-ic { width: 60px; height: 60px; border-radius: 16px; font-size: 1.6rem; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 800; }
+        .hire-card h3 { font-family: 'Space Grotesk', sans-serif; color: var(--text-primary); font-size: 1.2rem; margin-bottom: 4px; }
+        .hire-card .tagline { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px; }
+        @media (max-width: 900px) { .hire-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+
+        /* ===== RESUME ===== */
+        .resume-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
+        .resume-block { padding: 28px; margin-bottom: 20px; }
+        .resume-block-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
+        .resume-block-header i { font-size: 1.3rem; color: var(--neon-cyan); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--chip-bg); border-radius: 10px; flex-shrink: 0; }
+        .resume-block-header h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; color: var(--text-primary); }
+        .resume-exp-item { padding: 14px 0; border-bottom: 1px solid var(--card-border); }
         .resume-exp-item:last-child { border-bottom: none; padding-bottom: 0; }
         .resume-exp-item:first-child { padding-top: 0; }
-        .resume-exp-top {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            gap: 12px; margin-bottom: 4px; flex-wrap: wrap;
-        }
-        .resume-exp-top h4 {
-            font-size: 1rem; font-weight: 600; color: var(--text-white); margin: 0;
-        }
-        .resume-exp-top .date {
-            font-size: 0.82rem; color: var(--primary); font-weight: 600;
-            white-space: nowrap; flex-shrink: 0;
-        }
-        .resume-exp-item .company {
-            font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;
-        }
-        .resume-exp-item .desc {
-            font-size: 0.88rem; color: var(--text-gray); line-height: 1.6;
-        }
-        .resume-exp-item ul {
-            margin: 6px 0 0; padding-left: 18px; list-style: none;
-        }
-        .resume-exp-item ul li {
-            font-size: 0.85rem; color: var(--text-gray); line-height: 1.6;
-            position: relative; padding-left: 14px; margin-bottom: 4px;
-        }
-        .resume-exp-item ul li::before {
-            content: ''; position: absolute; left: 0; top: 9px;
-            width: 5px; height: 5px; background: var(--primary);
-            border-radius: 50%;
-        }
-
-        /* Skills tags inside resume */
-        .resume-skills-group { margin-bottom: 16px; }
-        .resume-skills-group:last-child { margin-bottom: 0; }
-        .resume-skills-group h4 {
-            font-size: 0.92rem; font-weight: 600; color: var(--text-white); margin: 0 0 8px;
-        }
-        .resume-skills-group .skill-tags {
-            display: flex; flex-wrap: wrap; gap: 8px;
-        }
-        .resume-skills-group .skill-tag {
-            padding: 5px 14px; border-radius: 8px; font-size: 0.8rem;
-            background: rgba(91, 184, 208, 0.08); border: 1px solid rgba(91, 184, 208, 0.2);
-            color: var(--primary); font-weight: 500;
-        }
-
-        /* Certification items */
-        .cert-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 0; border-bottom: 1px solid var(--border);
-            gap: 12px; flex-wrap: wrap;
-        }
+        .resume-exp-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+        .resume-exp-top h4 { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+        .resume-exp-top .date { font-size: 0.8rem; color: var(--neon-cyan); font-weight: 600; white-space: nowrap; }
+        .resume-exp-item .company { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+        .resume-exp-item .desc, .resume-exp-item li { font-size: 0.88rem; color: var(--text-secondary); }
+        .resume-exp-item ul { margin-top: 6px; display: grid; gap: 4px; }
+        .resume-exp-item li { padding-left: 14px; position: relative; }
+        .resume-exp-item li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--neon-cyan); }
+        .cert-item { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--card-border); flex-wrap: wrap; }
         .cert-item:last-child { border-bottom: none; }
-        .cert-item h4 { font-size: 0.92rem; font-weight: 600; color: var(--text-white); margin: 0; }
-        .cert-item .cert-org { font-size: 0.82rem; color: var(--text-muted); }
-        .cert-item .cert-date { font-size: 0.82rem; color: var(--primary); font-weight: 600; white-space: nowrap; }
-
-        /* Two PDF preview cards side by side */
-        .cv-preview-row {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;
-        }
-        .cv-preview-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; overflow: hidden; text-align: center;
-            transition: all 0.3s;
-        }
-        .cv-preview-card:hover { border-color: var(--primary); }
-        .cv-preview-card h4 {
-            font-size: 0.95rem; font-weight: 600; color: var(--text-white);
-            padding: 16px 16px 8px; margin: 0;
-        }
-        .cv-preview-card h4 i { color: var(--primary); margin-right: 6px; }
-        .cv-preview-card iframe {
-            width: 100%; height: 280px; border: none; background: #fff;
-            pointer-events: none;
-        }
-        .cv-preview-card .cv-card-actions {
-            padding: 12px 16px;
-            display: flex; gap: 8px; justify-content: center;
-        }
-        .cv-preview-card .btn-sm {
-            padding: 8px 18px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
-            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-            transition: all 0.3s; cursor: pointer;
-        }
-        .btn-sm.btn-dl {
-            background: var(--gradient-primary); color: #fff; border: none;
-        }
-        .btn-sm.btn-view {
-            background: transparent; color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-        .btn-sm.btn-view:hover { background: rgba(91, 184, 208, 0.1); }
-
-        @media (max-width: 768px) {
-            .cv-preview-row { grid-template-columns: 1fr; }
-            .resume-block { padding: 20px; }
-            .resume-exp-top { flex-direction: column; gap: 4px; }
-        }
-        @media (max-width: 480px) {
-            .cv-preview-card iframe { height: 200px; }
-            .resume-block { padding: 16px; }
-        }
-
-        /* ===== EDUCATION ===== */
-        #education { background: var(--bg-dark); }
-        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .edu-card {
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
-            padding: 32px; transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-        }
-        .edu-card:hover { border-color: rgba(91,184,208,0.35); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
-        .edu-card .degree {
-            font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600;
-            color: var(--text-white); margin-bottom: 4px;
-        }
-        .edu-card .school { color: var(--primary); font-weight: 500; margin-bottom: 4px; }
-        .edu-card .year { font-size: 0.85rem; color: var(--text-muted); }
-        @media (max-width: 768px) { .edu-grid { grid-template-columns: 1fr; } }
+        .cert-item h4 { font-size: 0.92rem; color: var(--text-primary); font-weight: 600; }
+        .cert-item .cert-org { font-size: 0.8rem; color: var(--text-muted); }
+        .cert-item .cert-date { font-size: 0.8rem; color: var(--neon-cyan); font-weight: 600; }
+        .cv-card { padding: 24px; text-align: center; }
+        .cv-card iframe { width: 100%; height: 300px; border: none; border-radius: 12px; background: #fff; pointer-events: none; margin: 14px 0; }
+        .cv-card .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 900px) { .resume-grid { grid-template-columns: 1fr; } }
 
         /* ===== CONTACT ===== */
-        #contact { background: linear-gradient(180deg, var(--bg-dark), var(--bg-section-alt)); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-        .contact-info-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
-        .contact-info-item { display: flex; align-items: flex-start; gap: 16px; }
-        .contact-info-item .icon-box {
-            min-width: 48px; height: 48px; border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(74,159,181,0.1); color: var(--primary); font-size: 1.3rem;
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-list { display: grid; gap: 14px; margin-bottom: 26px; }
+        .contact-item { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
+        .contact-item .icon-box { min-width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--chip-bg); color: var(--neon-cyan); font-size: 1.3rem; border: 1px solid var(--chip-border); }
+        .contact-item h4 { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .contact-item p { font-size: 0.98rem; color: var(--text-primary); font-weight: 500; }
+        .socials { display: flex; gap: 10px; flex-wrap: wrap; }
+        .socials a { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border: 1px solid var(--card-border); color: var(--text-secondary); font-size: 1.25rem; transition: all 0.3s; }
+        .socials a:hover { color: var(--neon-cyan); border-color: var(--neon-cyan); transform: translateY(-3px); }
+        .contact-form { display: flex; flex-direction: column; gap: 14px; padding: 28px; }
+        .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%; padding: 13px 16px; border-radius: 12px; background: var(--bg-primary); border: 1px solid var(--card-border);
+            color: var(--text-primary); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.3s;
         }
-        .contact-info-item h4 { font-size: 0.95rem; color: var(--text-white); font-weight: 600; }
-        .contact-info-item p { font-size: 0.9rem; color: var(--text-gray); }
-
-        .contact-form { display: flex; flex-direction: column; gap: 16px; }
-        .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 14px 18px; border-radius: 12px;
-            background: var(--bg-card); border: 1px solid var(--border);
-            color: var(--text-white); font-family: inherit; font-size: 0.95rem;
-            transition: border-color 0.3s; outline: none;
-        }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
-        .contact-form textarea { min-height: 140px; resize: vertical; }
-        .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-muted); }
-        @media (max-width: 768px) {
-            .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-            .contact-form .row { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 480px) {
-            .contact-form button { width: 100%; justify-content: center; }
-        }
+        [data-theme="light"] .contact-form input, [data-theme="light"] .contact-form textarea, [data-theme="light"] .contact-form select { background: rgba(255,255,255,0.7); }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--neon-cyan); }
+        .contact-form textarea { min-height: 130px; resize: vertical; }
+        .contact-form ::placeholder { color: var(--text-muted); }
+        @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .contact-form .row { grid-template-columns: 1fr; } }
 
         /* ===== FOOTER ===== */
-        footer {
-            background: var(--bg-section-alt); border-top: 1px solid var(--border);
-            padding: 40px 0;
-        }
-        .footer-inner {
-            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-        }
+        footer { background: var(--bg-secondary); border-top: 1px solid var(--card-border); padding: 36px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
         .footer-inner p { font-size: 0.85rem; color: var(--text-muted); }
-        .footer-socials { display: flex; gap: 10px; }
-        .footer-socials a {
-            width: 38px; height: 38px; border-radius: 10px; display: flex;
-            align-items: center; justify-content: center;
-            background: var(--bg-card); border: 1px solid var(--border);
-            color: var(--text-gray); font-size: 1.1rem; transition: all 0.3s;
-        }
-        .footer-socials a:hover { color: var(--primary); border-color: var(--primary); }
+        .footer-inner p a { color: var(--neon-cyan); }
 
-        /* ===== SCROLL ANIMATIONS ===== */
-        .fade-up {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+        /* ===== FLOATING WHATSAPP ===== */
+        .wa-float { position: fixed; bottom: 26px; right: 26px; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; box-shadow: 0 6px 24px rgba(37,211,102,0.45); z-index: 999; transition: transform 0.3s; }
+        .wa-float:hover { transform: scale(1.08); }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed; bottom: 30px; right: 30px; width: 46px; height: 46px;
-            border-radius: 12px; background: var(--gradient-primary); color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; cursor: pointer; border: none;
-            opacity: 0; pointer-events: none; transition: all 0.3s;
-            box-shadow: 0 4px 20px var(--primary-glow); z-index: 999;
-        }
-        .back-to-top.visible { opacity: 1; pointer-events: auto; }
-        .back-to-top:hover { transform: translateY(-3px); }
-
-        /* ===== SPA PAGE TRANSITIONS ===== */
-        section {
-            display: none;
-            opacity: 0;
-            animation: none;
-        }
-        section.active {
-            display: block;
-            animation: pageFadeIn 0.5s ease forwards;
-        }
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Hero stays full-height */
-        #hero.active { display: flex; }
-
-        /* ===== SECTION-BOTTOM MARGIN REDUCTION ===== */
-        .section-subtitle { margin-bottom: 36px; }
-
-        /* ===== SMOOTH THEME TRANSITION ===== */
-        body, header, section, footer, .service-card, .skill-item, .portfolio-card,
-        .edu-card, .resume-block, .cv-preview-card, .contact-form input, .contact-form textarea,
-        .hero-socials a, .footer-socials a, .about-tags span, .btn-outline, .theme-toggle {
-            transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-        }
+        body, header, section, footer, .card, .theme-toggle, .socials a, .mp-pill, .skill-tag { transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
     </style>
 </head>
 <body>
@@ -664,68 +393,79 @@
 <header>
     <div class="container">
         <a href="#hero" class="logo">
-            <img src="./logo-icon.png" alt="AR Logo">
-            <span style="display:none;">Ariful</span>
+            <img src="./logo-icon.png" alt="Arif logo">
+            <span>Ariful<span class="gradient-text">.</span></span>
         </a>
         <nav id="nav">
-            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
-            <a href="#about" class="nav-link" data-section="about">About</a>
-            <a href="#services" class="nav-link" data-section="services">Services</a>
-            <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
-            <a href="#cv" class="nav-link" data-section="cv">Resume</a>
-            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#resume" class="nav-link">Resume</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <div class="header-actions">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-                <i class='bx bx-sun'></i>
-            </button>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-                <i class='bx bx-menu'></i>
-            </button>
+            <a href="#hire" class="btn btn-primary btn-sm nav-cta"><i class='bx bx-briefcase'></i> Hire Me</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class='bx bx-sun'></i></button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"><i class='bx bx-menu'></i></button>
         </div>
     </div>
 </header>
 
 <!-- ===== HERO ===== -->
-<section id="hero" class="active">
+<section id="hero">
     <div class="container">
         <div class="hero-grid">
             <div class="hero-text">
-                <p class="greeting"><i class='bx bx-hand'></i> Hello, I'm</p>
-                <h1>MD Ariful Islam</h1>
-                <p class="roles">AI Automation & Prompt Engineer · Shopify Expert · SEO Analyst · Project Manager</p>
-                <p>Building intelligent automation, high-converting Shopify stores, and data-driven SEO strategies to help businesses grow and succeed in the digital world.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary"><i class='bx bx-envelope'></i> Get in Touch</a>
-
+                <div class="hero-badge"><span class="dot"></span> Available for new projects</div>
+                <h1>Hi, I'm <span class="gradient-text">MD Ariful Islam</span></h1>
+                <div class="roles">
+                    <span><i class='bx bx-bot'></i> AI Automation Expert</span>
+                    <span><i class='bx bxl-shopify'></i> Shopify Developer</span>
+                    <span><i class='bx bx-search-alt'></i> SEO Specialist</span>
                 </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/Aarifnsu" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
-                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://twitter.com" target="_blank" title="Twitter"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://instagram.com" target="_blank" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                <p class="lead">I help businesses save time and sell more — with AI-powered automation, high-converting Shopify stores built end-to-end, and SEO that brings steady organic growth. 3+ years, 50+ delivered projects, clients across the US, UK, Europe and Asia.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn btn-primary"><i class='bx bx-folder-open'></i> View My Work</a>
+                    <a href="https://wa.me/8801759145811?text=Hi%20Arif%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class='bx bxl-whatsapp'></i> Chat on WhatsApp</a>
+                </div>
+                <div class="hire-row">
+                    <span class="lbl">Hire me on</span>
+                    <a href="https://www.seoclerk.com/user/aarifnsu" target="_blank" rel="noopener" class="mp-pill"><span class="mp-ic mp-seoclerk">S</span> SEOClerk</a>
+                    <a href="https://www.upwork.com/freelancers/~011a46eec04e001f37" target="_blank" rel="noopener" class="mp-pill"><span class="mp-ic mp-upwork">U</span> Upwork</a>
+                    <a href="https://www.fiverr.com/aarif_nsu" target="_blank" rel="noopener" class="mp-pill"><span class="mp-ic mp-fiverr">F</span> Fiverr</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <img src="./home.png" alt="MD Ariful Islam">
+                    <div class="ring"></div>
+                    <div class="frame"><img src="./home.png" alt="MD Ariful Islam"></div>
                     <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-num">3+</div>
-                            <div class="stat-label">Years Exp</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-num">50+</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-num">30+</div>
-                            <div class="stat-label">Clients</div>
-                        </div>
+                        <div class="stat"><div class="stat-num gradient-text">3+</div><div class="stat-label">Years Exp</div></div>
+                        <div class="stat"><div class="stat-num gradient-text">50+</div><div class="stat-label">Projects</div></div>
+                        <div class="stat"><div class="stat-num gradient-text">30+</div><div class="stat-label">Clients</div></div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUSTED BY ===== -->
+<section id="trusted" class="section-alt">
+    <div class="container">
+        <p class="trusted-head">Trusted by <span class="gradient-text" style="font-weight:700">10+</span> Global Clients</p>
+    </div>
+    <div class="marquee">
+        <div class="marquee-track" id="marquee-track">
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><path d="M12 20c0-4 8-4 8-8a4 4 0 0 0-8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><span>StyleManiacs</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="20" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M12 14h8M12 18h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="9" r="2" fill="currentColor"/></svg></div><span>Chemora</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M16 6c-3 0-6 2-6 5 0 4 6 6 6 12 0-6 6-8 6-12 0-3-3-5-6-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 26h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><span>BeautyWithThai</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><polygon points="16,4 28,12 28,24 16,28 4,24 4,12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="16,10 22,14 22,22 16,24 10,22 10,14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity="0.5"/></svg></div><span>Kopeks</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M6 26V6l10 20L26 6v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>NovaTech</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M8 22a6 6 0 0 1-.5-12A8 8 0 0 1 23 12h1a5 5 0 0 1 0 10H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 18v-6m-3 3l3-3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>CloudSync</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M6 8h20L6 24h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Zenith</span></div>
+            <div class="logo-item"><div class="ic"><svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2"/><path d="M16 6v20M6 16h20" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.3"/></svg></div><span>Axion</span></div>
         </div>
     </div>
 </section>
@@ -735,22 +475,22 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-images fade-up">
-                <img src="./1.0.jpg" alt="Workspace setup">
-                <img src="./1.1.jpg" alt="Development environment">
-                <img src="./1.4.jpg" alt="Coding">
+                <img src="./assets/img/svc-ai.webp" alt="AI automation">
+                <img src="./assets/img/svc-seo.webp" alt="SEO analytics">
+                <img src="./assets/img/svc-shopify.webp" alt="Shopify development">
             </div>
             <div class="about-content fade-up">
                 <span class="section-label"><i class='bx bx-user'></i> About Me</span>
-                <h2 class="section-title">Turning Ideas into<br>Digital Reality</h2>
-                <p>I'm a passionate technologist from Dhaka, Bangladesh with expertise spanning AI automation, e-commerce development, and search engine optimization. With an MSc in Computer Science (AI major) from AIUB and a BSc in CSE from North South University, I combine strong academic foundations with real-world problem solving.</p>
-                <p>I specialize in building AI-powered automation workflows using tools like ChatGPT, Make.com, and n8n — along with custom Shopify stores that convert visitors into loyal customers. My SEO strategies are data-driven and results-oriented.</p>
+                <h2 class="section-title">One expert. Three skills.<br>Zero hand-offs.</h2>
+                <p>I'm a freelance developer from Dhaka, Bangladesh with an MSc in Computer Science (AI) from AIUB and a BSc in CSE from North South University. I personally handle every project from the first call to the final delivery — so you always talk to the person who actually does the work.</p>
+                <p>Over the last 3+ years I've built and automated e-commerce businesses for clients in skincare, fashion, construction and tech — combining AI automation, complete Shopify store development and data-driven SEO into one streamlined service.</p>
+                <ul class="about-points">
+                    <li><i class='bx bx-check-circle'></i> Direct communication — no project managers, no middlemen</li>
+                    <li><i class='bx bx-check-circle'></i> Clear milestones, on-time delivery, unlimited revisions within scope</li>
+                    <li><i class='bx bx-check-circle'></i> Fluent English · available across US / UK / EU time zones</li>
+                </ul>
                 <div class="about-tags">
-                    <span>AI Automation</span>
-                    <span>Prompt Engineering</span>
-                    <span>Shopify</span>
-                    <span>SEO</span>
-                    <span>E-Commerce</span>
-                    <span>Web Development</span>
+                    <span>AI Automation</span><span>n8n &amp; Make</span><span>Shopify A–Z</span><span>Liquid</span><span>Technical SEO</span><span>WordPress</span><span>Google Analytics</span>
                 </div>
             </div>
         </div>
@@ -758,718 +498,462 @@
 </section>
 
 <!-- ===== SERVICES ===== -->
-<section id="services">
+<section id="services" class="section-alt">
     <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
+        <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-briefcase'></i> Services</span>
-            <h2 class="section-title">What I Do Best</h2>
-            <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Comprehensive digital solutions tailored to your business needs</p>
+            <h2 class="section-title">What I Can Do For You</h2>
+            <p class="section-subtitle">Three core services, delivered end-to-end by one person you can reach anytime.</p>
         </div>
         <div class="services-grid">
-            <div class="service-card fade-up">
-                <div class="service-card-img">
-                    <img src="./1.3.jpg" alt="AI Automation & Data Analysis">
-                </div>
+            <div class="card service-card fade-up">
+                <div class="service-card-img"><img src="./assets/img/svc-ai.webp" alt="AI Automation"></div>
                 <div class="service-card-body">
                     <div class="icon"><i class='bx bx-bot'></i></div>
-                    <h3>AI Automation & Prompt Engineering</h3>
-                    <p>Building intelligent workflows with ChatGPT, Claude, Make.com, and n8n. Custom AI solutions that automate repetitive tasks and boost productivity.</p>
+                    <h3>AI Automation</h3>
+                    <p>Put your repetitive work on autopilot. I design AI workflows and agents that run your business 24/7.</p>
+                    <ul>
+                        <li><i class='bx bx-check'></i> Workflow automation with n8n, Make &amp; Zapier</li>
+                        <li><i class='bx bx-check'></i> AI chatbots &amp; customer-support agents</li>
+                        <li><i class='bx bx-check'></i> CRM / GoHighLevel setup &amp; lead automation</li>
+                        <li><i class='bx bx-check'></i> Order, email &amp; inventory automation for e-commerce</li>
+                        <li><i class='bx bx-check'></i> Custom AI agents with OpenAI / Claude API</li>
+                    </ul>
                 </div>
             </div>
-            <div class="service-card fade-up">
-                <div class="service-card-img">
-                    <img src="./1.2.jpg" alt="Shopify & E-commerce">
-                </div>
+            <div class="card service-card fade-up">
+                <div class="service-card-img"><img src="./assets/img/svc-shopify.webp" alt="Shopify Development"></div>
                 <div class="service-card-body">
-                    <div class="icon"><i class='bx bx-store'></i></div>
-                    <h3>Shopify & E-commerce Development</h3>
-                    <p>Custom Shopify store setup, theme customization, product optimization, and complete e-commerce solutions that drive sales and growth.</p>
+                    <div class="icon"><i class='bx bxl-shopify'></i></div>
+                    <h3>Shopify — Full A to Z</h3>
+                    <p>From a blank account to a store that sells. Setup, design, apps, speed and ongoing management — all covered.</p>
+                    <ul>
+                        <li><i class='bx bx-check'></i> Complete store setup &amp; product/collection structure</li>
+                        <li><i class='bx bx-check'></i> Custom theme design &amp; Liquid development</li>
+                        <li><i class='bx bx-check'></i> Figma / PSD to Shopify conversion</li>
+                        <li><i class='bx bx-check'></i> App integration, payments, shipping &amp; migration</li>
+                        <li><i class='bx bx-check'></i> Speed optimization &amp; conversion rate improvement</li>
+                    </ul>
                 </div>
             </div>
-            <div class="service-card fade-up">
-                <div class="service-card-img">
-                    <img src="./1.5.jpg" alt="SEO & Web Design">
-                </div>
+            <div class="card service-card fade-up">
+                <div class="service-card-img"><img src="./assets/img/svc-seo.webp" alt="SEO Services"></div>
                 <div class="service-card-body">
                     <div class="icon"><i class='bx bx-search-alt'></i></div>
-                    <h3>SEO & Digital Strategy</h3>
-                    <p>Data-driven SEO audits, keyword research, on-page optimization, and content strategy that improves rankings and drives organic traffic.</p>
+                    <h3>SEO &amp; Growth</h3>
+                    <p>Get found by the right customers. Data-driven SEO that turns search traffic into steady revenue.</p>
+                    <ul>
+                        <li><i class='bx bx-check'></i> Technical SEO audit &amp; fixes</li>
+                        <li><i class='bx bx-check'></i> Keyword research &amp; competitor analysis</li>
+                        <li><i class='bx bx-check'></i> On-page &amp; off-page optimization</li>
+                        <li><i class='bx bx-check'></i> Shopify &amp; WordPress SEO setup</li>
+                        <li><i class='bx bx-check'></i> Google Analytics 4 &amp; Search Console reporting</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== EXPERIENCE ===== -->
-<section id="experience">
+<!-- ===== WHY ME ===== -->
+<section id="why">
     <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
-            <span class="section-label"><i class='bx bx-briefcase-alt-2'></i> Experience</span>
-            <h2 class="section-title">Professional Journey</h2>
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-star'></i> Why Work With Me</span>
+            <h2 class="section-title">Built for Busy Business Owners</h2>
         </div>
-        <div class="timeline fade-up">
-            <div class="timeline-item">
-                <div class="date">Sep 2024 — Present</div>
-                <h3>AI Automation & Prompt Engineer</h3>
-                <div class="company">Jeeves.Plus — Remote</div>
-                <p>Building AI-powered automation workflows and prompt engineering solutions for business process optimization.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="date">Sep 2023 — Aug 2024</div>
-                <h3>Shopify & Ecommerce Webdeveloper</h3>
-                <div class="company">M/s Style Maniacs — Dhaka</div>
-                <p>Developed and managed multiple Shopify stores, handled theme customization, product management, and conversion optimization.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="date">Jan 2020 — Aug 2023</div>
-                <h3>SEO Analyst</h3>
-                <div class="company">M/s Style Maniacs — Dhaka</div>
-                <p>Conducted SEO audits, keyword research, on-page optimization, and managed Google Analytics & Search Console for performance tracking.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="date">Jun 2019 — Dec 2019</div>
-                <h3>Front-End Web Developer</h3>
-                <div class="company">Jeeves.Plus — Remote</div>
-                <p>Developed responsive web interfaces using HTML, CSS, and JavaScript. Collaborated with the team on UI/UX implementations.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== SKILLS ===== -->
-<section id="skills">
-    <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
-            <span class="section-label"><i class='bx bx-code-alt'></i> Skills</span>
-            <h2 class="section-title">Tools & Technologies</h2>
-        </div>
-        <div class="skills-grid fade-up">
-            <div class="skill-item">
-                <i class='bx bxl-html5'></i>
-                <span>HTML5</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-css3'></i>
-                <span>CSS3</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-javascript'></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-react'></i>
-                <span>React</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-python'></i>
-                <span>Python</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-shopify'></i>
-                <span>Shopify</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-wordpress'></i>
-                <span>WordPress</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bx-bot'></i>
-                <span>AI / ChatGPT</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bx-search-alt'></i>
-                <span>SEO</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bx-data'></i>
-                <span>Data Analysis</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-figma'></i>
-                <span>Figma</span>
-            </div>
-            <div class="skill-item">
-                <i class='bx bxl-git'></i>
-                <span>Git / GitHub</span>
-            </div>
+        <div class="why-grid">
+            <div class="card why-card fade-up"><div class="icon"><i class='bx bx-user-voice'></i></div><h3>You Talk to the Builder</h3><p>No account managers. I personally scope, build, test and deliver every project.</p></div>
+            <div class="card why-card fade-up"><div class="icon"><i class='bx bx-time-five'></i></div><h3>Fast, Reliable Delivery</h3><p>Clear milestones and realistic deadlines — most Shopify builds ship in 1–3 weeks.</p></div>
+            <div class="card why-card fade-up"><div class="icon"><i class='bx bx-line-chart'></i></div><h3>Results, Not Just Code</h3><p>Every store, automation and SEO plan is measured against sales, time saved and traffic.</p></div>
+            <div class="card why-card fade-up"><div class="icon"><i class='bx bx-support'></i></div><h3>Post-Launch Support</h3><p>I stay available after delivery for fixes, tweaks and questions — you're never left alone.</p></div>
         </div>
     </div>
 </section>
 
 <!-- ===== PORTFOLIO ===== -->
-<section id="portfolio">
+<section id="portfolio" class="section-alt">
     <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
+        <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-folder-open'></i> Portfolio</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">A selection of recent work across AI, e-commerce, and web development</p>
+            <h2 class="section-title">Recent Projects</h2>
+            <p class="section-subtitle">A selection of client work across Shopify, AI automation and SEO.</p>
+        </div>
+        <div class="filter-bar fade-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="shopify">Shopify</button>
+            <button class="filter-btn" data-filter="ai">AI Automation</button>
+            <button class="filter-btn" data-filter="seo">SEO</button>
         </div>
         <div class="portfolio-grid">
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.0.jpg" alt="AI Chatbot Project">
-                    <div class="overlay">
-                        <a href="#" title="View Project"><i class='bx bx-link-external'></i></a>
-                        <a href="#" title="Source Code"><i class='bx bxl-github'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="shopify seo">
+                <div class="portfolio-card-img"><img src="./assets/img/p-stylemaniacs.webp" alt="Style Maniacs"><span class="badge">Shopify + SEO</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">AI Automation</div>
-                    <h3>AI Customer Support Chatbot</h3>
-                    <p>Intelligent chatbot with natural language processing for automated customer support.</p>
+                    <h3>Style Maniacs</h3>
+                    <p>Full Shopify store management, theme customization and ongoing SEO for a skincare &amp; wellness brand.</p>
+                    <div class="result"><i class='bx bx-trending-up'></i> Steady organic growth <a href="https://stylemaniacs.com" target="_blank" rel="noopener" class="link"><i class='bx bx-link-external'></i></a></div>
                 </div>
             </div>
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.2.jpg" alt="Shopify Store">
-                    <div class="overlay">
-                        <a href="#" title="View Project"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="shopify">
+                <div class="portfolio-card-img"><img src="./assets/img/p-beautywiththai.webp" alt="Beauty with Thai"><span class="badge">Shopify</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">Shopify</div>
-                    <h3>Fashion E-commerce Store</h3>
-                    <p>Full Shopify store build with custom theme, product catalog, and payment integration.</p>
+                    <h3>Beauty with Thai</h3>
+                    <p>Complete Shopify build for a Thai skincare brand — custom theme, product setup, payments and SEO-ready structure.</p>
+                    <div class="result"><i class='bx bx-rocket'></i> Launched in 3 weeks <a href="https://beautywiththai.com" target="_blank" rel="noopener" class="link"><i class='bx bx-link-external'></i></a></div>
                 </div>
             </div>
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.5.jpg" alt="Web Design Project">
-                    <div class="overlay">
-                        <a href="#" title="View Project"><i class='bx bx-link-external'></i></a>
-                        <a href="#" title="Source Code"><i class='bx bxl-github'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="shopify">
+                <div class="portfolio-card-img"><img src="./assets/img/p-kopeks.webp" alt="Kopeks"><span class="badge">Shopify</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">Web Design</div>
-                    <h3>Corporate Website Redesign</h3>
-                    <p>Modern responsive website with clean UI/UX and optimized performance.</p>
+                    <h3>Kopeks Theme Redesign</h3>
+                    <p>Figma-to-Shopify theme redesign with pixel-perfect sections, mobile-first layout and faster load times.</p>
+                    <div class="result"><i class='bx bx-tachometer'></i> 90+ PageSpeed score</div>
                 </div>
             </div>
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.3.jpg" alt="SEO Analytics">
-                    <div class="overlay">
-                        <a href="#" title="View Case Study"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="seo">
+                <div class="portfolio-card-img"><img src="./assets/img/p-chemora.webp" alt="Chemora Buildtech"><span class="badge">WordPress + SEO</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">SEO</div>
-                    <h3>SEO Growth Campaign</h3>
-                    <p>Comprehensive SEO strategy that increased organic traffic by 200% in 6 months.</p>
+                    <h3>Chemora Buildtech Solution</h3>
+                    <p>Corporate WordPress site with full technical and on-page SEO for a construction company.</p>
+                    <div class="result"><i class='bx bx-trending-up'></i> Top-3 local rankings <a href="https://chemorabuildtechsolution.com" target="_blank" rel="noopener" class="link"><i class='bx bx-link-external'></i></a></div>
                 </div>
             </div>
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.4.jpg" alt="Automation Workflow">
-                    <div class="overlay">
-                        <a href="#" title="View Project"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="ai">
+                <div class="portfolio-card-img"><img src="./assets/img/p-order-ai.webp" alt="AI order processing"><span class="badge">AI Automation</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">Automation</div>
-                    <h3>Business Process Automation</h3>
-                    <p>End-to-end workflow automation using Make.com and n8n for a logistics company.</p>
+                    <h3>Smart Order Processing</h3>
+                    <p>n8n + AI workflow that reads, categorizes and routes incoming orders, with an AI chatbot answering customer queries.</p>
+                    <div class="result"><i class='bx bx-time'></i> 70% less processing time</div>
                 </div>
             </div>
-            <div class="portfolio-card fade-up">
-                <div class="portfolio-card-img">
-                    <img src="./1.1.jpg" alt="Dashboard Analytics">
-                    <div class="overlay">
-                        <a href="#" title="View Project"><i class='bx bx-link-external'></i></a>
-                        <a href="#" title="Source Code"><i class='bx bxl-github'></i></a>
-                    </div>
-                </div>
+            <div class="card portfolio-card fade-up" data-cat="ai shopify">
+                <div class="portfolio-card-img"><img src="./assets/img/p-automation-suite.webp" alt="E-commerce automation"><span class="badge">AI Automation</span></div>
                 <div class="portfolio-card-body">
-                    <div class="tag">Full Stack</div>
-                    <h3>Analytics Dashboard</h3>
-                    <p>Real-time data analytics dashboard with interactive charts and reporting.</p>
+                    <h3>E-Commerce Automation Suite</h3>
+                    <p>Connected Shopify, email marketing and inventory into one automated system with AI-driven follow-ups.</p>
+                    <div class="result"><i class='bx bx-sync'></i> Real-time sync, zero overselling</div>
+                </div>
+            </div>
+            <div class="card portfolio-card fade-up" data-cat="shopify">
+                <div class="portfolio-card-img"><img src="./assets/img/p-migration.webp" alt="Store migration"><span class="badge">Shopify</span></div>
+                <div class="portfolio-card-body">
+                    <h3>WooCommerce → Shopify Migration</h3>
+                    <p>Migrated products, customers and orders to Shopify with URL redirects so no SEO value was lost.</p>
+                    <div class="result"><i class='bx bx-shield-quarter'></i> Zero ranking drop</div>
+                </div>
+            </div>
+            <div class="card portfolio-card fade-up" data-cat="shopify seo">
+                <div class="portfolio-card-img"><img src="./assets/img/p-speed.webp" alt="Speed optimization"><span class="badge">Shopify</span></div>
+                <div class="portfolio-card-body">
+                    <h3>Store Speed Optimization</h3>
+                    <p>Cleaned up theme code, lazy-loaded media and removed unused apps for a fashion store.</p>
+                    <div class="result"><i class='bx bx-tachometer'></i> Load time 5.2s → 1.8s</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== CV / RESUME VIEWER ===== -->
-<section id="cv">
+<!-- ===== PROCESS ===== -->
+<section id="process">
     <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-git-branch'></i> How I Work</span>
+            <h2 class="section-title">A Simple, Transparent Process</h2>
+        </div>
+        <div class="process-grid">
+            <div class="card process-step fade-up"><div class="num">1</div><h3>Discovery</h3><p>We discuss your goals, audience and what success looks like.</p></div>
+            <div class="card process-step fade-up"><div class="num">2</div><h3>Plan &amp; Quote</h3><p>You get a clear scope, timeline and fixed price — no surprises.</p></div>
+            <div class="card process-step fade-up"><div class="num">3</div><h3>Build</h3><p>I design and develop with regular progress updates and previews.</p></div>
+            <div class="card process-step fade-up"><div class="num">4</div><h3>Test &amp; Launch</h3><p>Everything is tested on all devices before going live.</p></div>
+            <div class="card process-step fade-up"><div class="num">5</div><h3>Support</h3><p>Post-launch help, training and optimization as you grow.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section-alt">
+    <div class="container">
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-code-alt'></i> Skills</span>
+            <h2 class="section-title">Tools &amp; Technologies</h2>
+        </div>
+        <div class="skills-groups">
+            <div class="card skill-group fade-up">
+                <h3><i class='bx bx-bot'></i> AI &amp; Automation</h3>
+                <div class="skill-tags"><span class="skill-tag">n8n</span><span class="skill-tag">Make.com</span><span class="skill-tag">Zapier</span><span class="skill-tag">GoHighLevel</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">Claude API</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">AI Chatbots</span><span class="skill-tag">Python</span><span class="skill-tag">REST APIs &amp; Webhooks</span></div>
+            </div>
+            <div class="card skill-group fade-up">
+                <h3><i class='bx bxl-shopify'></i> Shopify &amp; Web</h3>
+                <div class="skill-tags"><span class="skill-tag">Shopify</span><span class="skill-tag">Shopify Plus</span><span class="skill-tag">Liquid</span><span class="skill-tag">Theme Development</span><span class="skill-tag">Shopify Apps</span><span class="skill-tag">Klaviyo</span><span class="skill-tag">HTML / CSS / JavaScript</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">WordPress</span><span class="skill-tag">Figma</span><span class="skill-tag">Git / GitHub</span></div>
+            </div>
+            <div class="card skill-group fade-up">
+                <h3><i class='bx bx-search-alt'></i> SEO &amp; Analytics</h3>
+                <div class="skill-tags"><span class="skill-tag">Technical SEO</span><span class="skill-tag">On-Page SEO</span><span class="skill-tag">Off-Page SEO</span><span class="skill-tag">Keyword Research</span><span class="skill-tag">Google Analytics 4</span><span class="skill-tag">Search Console</span><span class="skill-tag">Semrush</span><span class="skill-tag">Ahrefs</span><span class="skill-tag">Screaming Frog</span><span class="skill-tag">Competitor Analysis</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+    <div class="container">
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-message-rounded-dots'></i> Testimonials</span>
+            <h2 class="section-title">What Clients Say</h2>
+        </div>
+        <div class="testi-grid">
+            <div class="card testi-card fade-up">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Arif transformed our outdated website into a high-converting Shopify store. Sales increased 200% in the first month."</blockquote>
+                <div class="who"><div class="avatar">JM</div><div><strong>James Mitchell</strong><small>CEO, TechVentures USA</small></div></div>
+            </div>
+            <div class="card testi-card fade-up">
+                <div class="stars">★★★★★</div>
+                <blockquote>"The AI chatbot he built handles 80% of our customer queries automatically. Game changer for our small team!"</blockquote>
+                <div class="who"><div class="avatar">SK</div><div><strong>Sarah Klein</strong><small>COO, Nordic Commerce</small></div></div>
+            </div>
+            <div class="card testi-card fade-up">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Professional, fast, and incredibly talented. He delivered our complete website and SEO setup in just 3 weeks."</blockquote>
+                <div class="who"><div class="avatar">RL</div><div><strong>Robert Lee</strong><small>Founder, CanadaFresh Co.</small></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HIRE ME ===== -->
+<section id="hire" class="section-alt">
+    <div class="container">
+        <div class="section-head fade-up">
+            <span class="section-label"><i class='bx bx-briefcase'></i> Hire Me</span>
+            <h2 class="section-title">Work With Me on Your Favorite Platform</h2>
+            <p class="section-subtitle">Verified profiles with secure payments — or contact me directly for a custom quote.</p>
+        </div>
+        <div class="hire-grid">
+            <div class="card hire-card fade-up">
+                <div class="mp-ic mp-seoclerk">S</div>
+                <h3>SEOClerk</h3>
+                <p class="tagline">Verified Seller · SEO &amp; growth services</p>
+                <a href="https://www.seoclerk.com/user/aarifnsu" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Profile <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            <div class="card hire-card fade-up">
+                <div class="mp-ic mp-upwork">U</div>
+                <h3>Upwork</h3>
+                <p class="tagline">Verified Freelancer · Hourly or fixed-price</p>
+                <a href="https://www.upwork.com/freelancers/~011a46eec04e001f37" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Profile <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            <div class="card hire-card fade-up">
+                <div class="mp-ic mp-fiverr">F</div>
+                <h3>Fiverr</h3>
+                <p class="tagline">Ready-made gigs · Quick turnaround</p>
+                <a href="https://www.fiverr.com/aarif_nsu" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Profile <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RESUME ===== -->
+<section id="resume">
+    <div class="container">
+        <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-file'></i> Resume</span>
-            <h2 class="section-title">My Resume</h2>
-            <p class="section-subtitle">A detailed overview of my professional background, skills, and achievements.</p>
+            <h2 class="section-title">Experience &amp; Education</h2>
         </div>
-
-        <div class="resume-content">
-            <!-- Summary -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-user-circle'></i>
-                    <h3>Professional Summary</h3>
-                </div>
-                <p>Data-driven Web Developer & SEO Analyst with expertise in search trend research, competitor analysis, and audience insights. Applying technical development skills (Shopify, theme customization, performance optimization) to support content and business strategy.</p>
-            </div>
-
-            <!-- Experience -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-briefcase'></i>
-                    <h3>Work Experience</h3>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>Web Developer & SEO Analytics</h4>
-                        <span class="date">Jul 2026 — Present</span>
+        <div class="resume-grid">
+            <div>
+                <div class="card resume-block fade-up">
+                    <div class="resume-block-header"><i class='bx bx-briefcase'></i><h3>Work Experience</h3></div>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>Web Developer &amp; SEO Analytics</h4><span class="date">Jul 2026 — Present</span></div>
+                        <div class="company">Style Maniacs — Dhaka</div>
+                        <div class="desc">End-to-end Shopify development and SEO strategy for a skincare e-commerce brand, using search and audience data to guide content and product decisions.</div>
                     </div>
-                    <div class="company">Style Maniacs — Dhaka</div>
-                    <div class="desc">Managing end-to-end Shopify development and SEO strategy for an e-commerce store, using search and audience data to guide content and product decisions.</div>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>Shopify Web Developer</h4>
-                        <span class="date">Feb 2026 — Jul 2026</span>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>Shopify Web Developer</h4><span class="date">Feb 2026 — Jul 2026</span></div>
+                        <div class="company">EcomClips — Dhaka</div>
+                        <div class="desc">Custom store design, theme customization and conversion-focused Shopify builds for international clients.</div>
                     </div>
-                    <div class="company">EcomClips — Mirpur, Dhaka</div>
-                    <div class="desc">Specializing in custom store design, theme customization, and conversion-focused eCommerce solutions. Building scalable, SEO-friendly, and high-performance Shopify stores.</div>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>Shopify Web Developer</h4>
-                        <span class="date">Dec 2025 — Jan 2026</span>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>Shopify Web Developer</h4><span class="date">Dec 2025 — Jan 2026</span></div>
+                        <div class="company">Betopia Group — Dhaka</div>
+                        <ul><li>Developed and customized Shopify themes, templates and layouts</li><li>Integrated Shopify apps and extensions for enhanced functionality</li><li>Ensured responsive, fast-loading storefronts across devices</li></ul>
                     </div>
-                    <div class="company">Betopia Group — Dhaka</div>
-                    <ul>
-                        <li>Customized and developed Shopify themes, templates, and layouts</li>
-                        <li>Implemented Shopify apps and extensions for enhanced functionality</li>
-                        <li>Ensured responsive, fast-loading websites across all devices</li>
-                        <li>Wrote clean HTML, CSS, and JavaScript for interactive interfaces</li>
-                    </ul>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>SEO Executive</h4>
-                        <span class="date">Aug 2025 — Dec 2025</span>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>SEO Executive</h4><span class="date">Aug 2025 — Dec 2025</span></div>
+                        <div class="company">Bizcope Digital Ltd — Dhaka</div>
+                        <ul><li>Improved visibility through strategic SEO and keyword optimization</li><li>Ran SEO campaigns and tracked organic growth in analytics</li></ul>
                     </div>
-                    <div class="company">Bizcope Digital Ltd — Dhaka</div>
-                    <ul>
-                        <li>Improved website visibility through strategic SEO and keyword optimization</li>
-                        <li>Executed SEO campaigns and monitored analytics for organic traffic growth</li>
-                        <li>Boosted rankings via on-page/off-page SEO and targeted keyword strategies</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-graduation'></i>
-                    <h3>Education</h3>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>MSc in Computer Science (AI Major)</h4>
-                        <span class="date">2021 — 2022</span>
-                    </div>
-                    <div class="company">American International University–Bangladesh (AIUB) — GPA: 3.56</div>
-                    <div class="desc">Focused on machine learning, data analysis, intelligent systems, and advanced computing with emphasis on problem-solving and real-world AI applications.</div>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>BSc in Computer Science & Engineering</h4>
-                        <span class="date">2015 — 2020</span>
-                    </div>
-                    <div class="company">North South University (NSU) — CGPA: 2.33</div>
-                    <div class="desc">Studied core CS fundamentals including programming, data structures, and web technologies.</div>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>Higher Secondary Certificate (HSC)</h4>
-                        <span class="date">2013</span>
-                    </div>
-                    <div class="company">Madan Mohan College — GPA: 4.20</div>
-                </div>
-                <div class="resume-exp-item">
-                    <div class="resume-exp-top">
-                        <h4>Secondary School Certificate (SSC)</h4>
-                        <span class="date">2011</span>
-                    </div>
-                    <div class="company">Jiroin Bohumukhi High School — GPA: 4.75</div>
-                </div>
-            </div>
-
-            <!-- Skills -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Technical Skills</h3>
-                </div>
-                <div class="resume-skills-group">
-                    <h4><i class='bx bxl-shopify' style="color:var(--primary);margin-right:6px"></i>Shopify Engineering</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Shopify Ecosystem</span>
-                        <span class="skill-tag">Liquid Templating</span>
-                        <span class="skill-tag">Theme Development</span>
-                        <span class="skill-tag">App Development</span>
-                        <span class="skill-tag">Performance Optimization</span>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>AI Automation &amp; Prompt Engineer</h4><span class="date">Sep 2024 — Jul 2025</span></div>
+                        <div class="company">Jeeves.Plus — Remote</div>
+                        <div class="desc">Built AI-powered automation workflows and prompt-engineering solutions for business process optimization.</div>
                     </div>
                 </div>
-                <div class="resume-skills-group">
-                    <h4><i class='bx bx-code-curly' style="color:var(--primary);margin-right:6px"></i>Programming</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C / C++</span>
-                        <span class="skill-tag">Bootstrap</span>
-                        <span class="skill-tag">Tailwind CSS</span>
+                <div class="card resume-block fade-up">
+                    <div class="resume-block-header"><i class='bx bx-graduation'></i><h3>Education</h3></div>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>MSc in Computer Science (AI Major)</h4><span class="date">2021 — 2022</span></div>
+                        <div class="company">American International University–Bangladesh (AIUB)</div>
                     </div>
-                </div>
-                <div class="resume-skills-group">
-                    <h4><i class='bx bx-search-alt' style="color:var(--primary);margin-right:6px"></i>SEO</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">On-Page SEO</span>
-                        <span class="skill-tag">Off-Page SEO</span>
-                        <span class="skill-tag">Keyword Research</span>
-                        <span class="skill-tag">Technical SEO</span>
-                        <span class="skill-tag">Content Optimization</span>
-                    </div>
-                </div>
-                <div class="resume-skills-group">
-                    <h4><i class='bx bx-bot' style="color:var(--primary);margin-right:6px"></i>AI & Automation</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Workflow Automation (n8n)</span>
-                        <span class="skill-tag">Claude API</span>
-                        <span class="skill-tag">AI Tools</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                    </div>
-                </div>
-                <div class="resume-skills-group">
-                    <h4><i class='bx bx-bar-chart-alt-2' style="color:var(--primary);margin-right:6px"></i>Data & Analytics</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Google Analytics</span>
-                        <span class="skill-tag">Google Search Console</span>
-                        <span class="skill-tag">SEMRush</span>
-                        <span class="skill-tag">Competitor Analysis</span>
+                    <div class="resume-exp-item">
+                        <div class="resume-exp-top"><h4>BSc in Computer Science &amp; Engineering</h4><span class="date">2015 — 2020</span></div>
+                        <div class="company">North South University (NSU)</div>
                     </div>
                 </div>
             </div>
-
-            <!-- Certifications -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-certification'></i>
-                    <h3>Certifications</h3>
+            <div>
+                <div class="card resume-block fade-up">
+                    <div class="resume-block-header"><i class='bx bx-certification'></i><h3>Certifications</h3></div>
+                    <div class="cert-item"><div><h4>Shopify Theme Development</h4><span class="cert-org">Ostad</span></div><span class="cert-date">Nov 2025</span></div>
+                    <div class="cert-item"><div><h4>Certificate Program in Data Science</h4><span class="cert-org">Ostad</span></div><span class="cert-date">2024</span></div>
+                    <div class="cert-item"><div><h4>Introduction to Data Science</h4><span class="cert-org">Online Course</span></div><span class="cert-date">Nov 2022</span></div>
+                    <div class="cert-item"><div><h4>Introduction to Data Analytics</h4><span class="cert-org">SkillUp by Simplilearn</span></div><span class="cert-date">Nov 2022</span></div>
                 </div>
-                <div class="cert-item">
-                    <div>
-                        <h4>Shopify Theme Development</h4>
-                        <span class="cert-org">Ostad</span>
+                <div class="card resume-block fade-up">
+                    <div class="resume-block-header"><i class='bx bx-globe'></i><h3>Languages</h3></div>
+                    <p style="color:var(--text-secondary);font-size:0.92rem"><strong style="color:var(--text-primary)">English</strong> — Fluent (speaking &amp; writing)<br><strong style="color:var(--text-primary)">Bengali</strong> — Native</p>
+                </div>
+                <div class="card cv-card fade-up">
+                    <h4 style="font-family:'Space Grotesk',sans-serif;color:var(--text-primary);font-size:1.05rem"><i class='bx bx-file-blank' style="color:var(--neon-cyan)"></i> Download My CV</h4>
+                    <iframe src="./assets/cv/ARIF_Job_CV.pdf" title="CV preview"></iframe>
+                    <div class="actions">
+                        <a href="./assets/cv/ARIF_Job_CV.pdf" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-show'></i> View</a>
+                        <a href="./assets/cv/ARIF_Job_CV.pdf" download class="btn btn-primary btn-sm"><i class='bx bx-download'></i> Download PDF</a>
                     </div>
-                    <span class="cert-date">Nov 2025</span>
                 </div>
-                <div class="cert-item">
-                    <div>
-                        <h4>Certificate Program in Data Science</h4>
-                        <span class="cert-org">Ostad</span>
-                    </div>
-                    <span class="cert-date">2024</span>
-                </div>
-                <div class="cert-item">
-                    <div>
-                        <h4>Introduction to Data Science</h4>
-                        <span class="cert-org">Online Course</span>
-                    </div>
-                    <span class="cert-date">Nov 2022</span>
-                </div>
-                <div class="cert-item">
-                    <div>
-                        <h4>Introduction to Data Analytics</h4>
-                        <span class="cert-org">SkillUp by Simplilearn</span>
-                    </div>
-                    <span class="cert-date">Nov 2022</span>
-                </div>
-            </div>
-
-            <!-- Languages & Interests -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-globe'></i>
-                    <h3>Languages & Interests</h3>
-                </div>
-                <p><strong style="color:var(--text-white)">Languages:</strong> English (Fluent — Communication, Writing, Speaking) · Bengali (Mother Tongue)</p>
-                <p><strong style="color:var(--text-white)">Interests:</strong> Technology & Coding · Reading · Traveling · Photography · Cooking · Gaming · Volunteering · Sports · Creative Arts & Design</p>
-            </div>
-
-            <!-- Reference -->
-            <div class="resume-block fade-up">
-                <div class="resume-block-header">
-                    <i class='bx bx-user-check'></i>
-                    <h3>Reference</h3>
-                </div>
-                <p><strong style="color:var(--text-white)">Dr. Md. Ashraf Ali</strong><br>
-                Professor, Department of Computer Science<br>
-                American International University–Bangladesh (AIUB)<br>
-                <a href="mailto:ashrafali@aiub.edu" style="color:var(--primary)">ashrafali@aiub.edu</a></p>
-            </div>
-        </div>
-
-        <!-- PDF Preview Cards -->
-        <div class="cv-preview-row fade-up">
-            <div class="cv-preview-card">
-                <h4><i class='bx bx-briefcase'></i> Job CV</h4>
-                <iframe src="./assets/cv/ARIF_Job_CV.pdf" title="Job CV Preview"></iframe>
-                <div class="cv-card-actions">
-                    <a href="./assets/cv/ARIF_Job_CV.pdf" target="_blank" class="btn-sm btn-view"><i class='bx bx-show'></i> View</a>
-                    <a href="./assets/cv/ARIF_Job_CV.pdf" download class="btn-sm btn-dl"><i class='bx bx-download'></i> Download</a>
-                </div>
-            </div>
-            <div class="cv-preview-card">
-                <h4><i class='bx bx-user'></i> Personal Bio Data</h4>
-                <iframe src="./assets/cv/Arif_Marrage_Bio_Data.pdf" title="Bio Data Preview"></iframe>
-                <div class="cv-card-actions">
-                    <a href="./assets/cv/Arif_Marrage_Bio_Data.pdf" target="_blank" class="btn-sm btn-view"><i class='bx bx-show'></i> View</a>
-                    <a href="./assets/cv/Arif_Marrage_Bio_Data.pdf" download class="btn-sm btn-dl"><i class='bx bx-download'></i> Download</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== EDUCATION ===== -->
-<section id="education">
-    <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
-            <span class="section-label"><i class='bx bx-graduation'></i> Education</span>
-            <h2 class="section-title">Academic Background</h2>
-        </div>
-        <div class="edu-grid fade-up">
-            <div class="edu-card">
-                <div class="degree">MSc in Computer Science</div>
-                <div class="school">American International University-Bangladesh (AIUB)</div>
-                <div class="year"><i class='bx bx-calendar'></i> Major in Artificial Intelligence</div>
-            </div>
-            <div class="edu-card">
-                <div class="degree">BSc in Computer Science & Engineering</div>
-                <div class="school">North South University (NSU)</div>
-                <div class="year"><i class='bx bx-calendar'></i> Completed</div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact">
+<section id="contact" class="section-alt">
     <div class="container">
-        <div class="fade-up" style="text-align:center; margin-bottom: 36px;">
+        <div class="section-head fade-up">
             <span class="section-label"><i class='bx bx-message-dots'></i> Contact</span>
-            <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Have a project in mind? Feel free to reach out.</p>
+            <h2 class="section-title">Let's Build Something Great</h2>
+            <p class="section-subtitle">Tell me about your project — I usually reply within a few hours.</p>
         </div>
         <div class="contact-grid">
             <div class="fade-up">
-                <div class="contact-info-list">
-                    <div class="contact-info-item">
-                        <div class="icon-box"><i class='bx bx-phone'></i></div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>(+88) 01612824292</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon-box"><i class='bx bx-envelope'></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>aarif.nsu@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon-box"><i class='bx bx-map'></i></div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Dhaka, Bangladesh</p>
-                        </div>
-                    </div>
+                <div class="contact-list">
+                    <a href="https://wa.me/8801759145811" target="_blank" rel="noopener" class="card contact-item"><div class="icon-box"><i class='bx bxl-whatsapp'></i></div><div><h4>WhatsApp</h4><p>+880 1759-145811</p></div></a>
+                    <a href="mailto:aarif.nsu@gmail.com" class="card contact-item"><div class="icon-box"><i class='bx bx-envelope'></i></div><div><h4>Email</h4><p>aarif.nsu@gmail.com</p></div></a>
+                    <div class="card contact-item"><div class="icon-box"><i class='bx bx-map'></i></div><div><h4>Location</h4><p>Dhaka, Bangladesh · Working worldwide</p></div></div>
                 </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/Aarifnsu" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
-                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class='bx bxl-facebook'></i></a>
-                    <a href="mailto:aarif.nsu@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/arif-nsu/" target="_blank" rel="noopener" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Aarifnsu" target="_blank" rel="noopener" title="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.youtube.com/@arif-nsu" target="_blank" rel="noopener" title="YouTube"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://www.upwork.com/freelancers/~011a46eec04e001f37" target="_blank" rel="noopener" title="Upwork"><i class='bx bx-briefcase'></i></a>
+                    <a href="https://www.fiverr.com/aarif_nsu" target="_blank" rel="noopener" title="Fiverr"><i class='bx bx-store-alt'></i></a>
+                    <a href="https://www.seoclerk.com/user/aarifnsu" target="_blank" rel="noopener" title="SEOClerk"><i class='bx bx-search-alt'></i></a>
                 </div>
             </div>
-            <form class="contact-form fade-up" onsubmit="event.preventDefault(); alert('Thank you! Your message has been received.');">
+            <form class="card contact-form fade-up" action="https://formsubmit.co/aarif.nsu@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New project inquiry from portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <div class="row">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
                 </div>
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
-                    <i class='bx bx-send'></i> Send Message
-                </button>
+                <select name="service" required>
+                    <option value="" disabled selected>What do you need help with?</option>
+                    <option>AI Automation</option>
+                    <option>Shopify Store (new build)</option>
+                    <option>Shopify Fix / Customization</option>
+                    <option>SEO</option>
+                    <option>Something else</option>
+                </select>
+                <textarea name="message" placeholder="Tell me about your project, goals and timeline…" required></textarea>
+                <button type="submit" class="btn btn-primary" style="align-self:flex-start;"><i class='bx bx-send'></i> Send Message</button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
     <div class="container">
         <div class="footer-inner">
-            <p>&copy; 2024 MD Ariful Islam. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Aarifnsu" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
-                <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
-            </div>
+            <p>&copy; <span id="year"></span> MD Ariful Islam. All rights reserved.</p>
+            <p>Also running <a href="https://arif-automation-hub.pages.dev/" target="_blank" rel="noopener">Arif Automation Hub</a></p>
         </div>
     </div>
 </footer>
 
-<!-- Back to Top -->
-<button class="back-to-top" id="backToTop">
-    <i class='bx bx-chevron-up'></i>
-</button>
+<a href="https://wa.me/8801759145811?text=Hi%20Arif%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><i class='bx bxl-whatsapp'></i></a>
 
 <script>
-    // ===== SPA SECTION SWITCHING =====
-    const allSections = document.querySelectorAll('section');
-    const allNavLinks = document.querySelectorAll('#nav .nav-link');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Duplicate marquee items for seamless loop
+    const track = document.getElementById('marquee-track');
+    track.innerHTML += track.innerHTML;
+
+    // Mobile menu
     const nav = document.getElementById('nav');
     const menuToggle = document.getElementById('menu-toggle');
-
-    // Show all sections (Home view — full scrollable page)
-    function showAllSections() {
-        allSections.forEach(s => {
-            if (s.id === 'cv') return; // Hide Resume on Home page
-            s.classList.add('active');
-            s.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-        });
-        allNavLinks.forEach(l => l.classList.remove('active'));
-        allNavLinks.forEach(l => {
-            if (l.dataset.section === 'hero') l.classList.add('active');
-        });
-        window.scrollTo({ top: 0 });
-        closeMobileMenu();
-    }
-
-    // Show only one section (individual page view)
-    function switchSection(targetId) {
-        // If Home clicked, show all sections
-        if (targetId === 'hero') {
-            showAllSections();
-            return;
-        }
-
-        // Hide all sections and reset fade-ups
-        allSections.forEach(s => {
-            s.classList.remove('active');
-            s.querySelectorAll('.fade-up').forEach(el => el.classList.remove('visible'));
-        });
-        // Deactivate all nav links
-        allNavLinks.forEach(l => l.classList.remove('active'));
-
-        // Show target section after a brief delay for clean transition
-        const target = document.getElementById(targetId);
-        if (target) {
-            setTimeout(() => {
-                target.classList.add('active');
-                target.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-                window.scrollTo({ top: 0 });
-            }, 50);
-        }
-
-        // Activate the clicked nav link
-        allNavLinks.forEach(l => {
-            if (l.dataset.section === targetId) l.classList.add('active');
-        });
-
-        closeMobileMenu();
-    }
-
-    function closeMobileMenu() {
-        nav.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.add('bx-menu');
-        icon.classList.remove('bx-x');
-    }
-
-    // Nav link click handlers
-    allNavLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const sectionId = link.dataset.section;
-            if (sectionId) switchSection(sectionId);
-        });
-    });
-
-    // Logo click → go to Home (all sections)
-    document.querySelector('.logo').addEventListener('click', (e) => {
-        e.preventDefault();
-        showAllSections();
-    });
-
-    // Hero buttons that link to sections
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        if (link.classList.contains('nav-link') || link.classList.contains('logo')) return;
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href').substring(1);
-            if (targetId && document.getElementById(targetId)) {
-                e.preventDefault();
-                switchSection(targetId);
-            }
-        });
-    });
-
-    // Mobile menu toggle
     menuToggle.addEventListener('click', () => {
         nav.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('bx-menu');
-        icon.classList.toggle('bx-x');
+        menuToggle.querySelector('i').classList.toggle('bx-menu');
+        menuToggle.querySelector('i').classList.toggle('bx-x');
+    });
+    document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.querySelector('i').classList.add('bx-menu');
+        menuToggle.querySelector('i').classList.remove('bx-x');
+    }));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+        });
     });
 
-    // Initialize: show ALL sections on page load (Home view)
-    showAllSections();
+    // Active nav on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = [...navLinks].map(l => document.querySelector(l.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY + 120;
+        let cur = sections[0];
+        sections.forEach(s => { if (s && s.offsetTop <= y) cur = s; });
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur.id));
+    }, { passive: true });
 
-    // ===== THEME TOGGLE =====
+    // Fade-up on scroll
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    // Portfolio filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const f = btn.dataset.filter;
+            document.querySelectorAll('.portfolio-card').forEach(c => {
+                c.classList.toggle('hide', f !== 'all' && !c.dataset.cat.split(' ').includes(f));
+            });
+        });
+    });
+
+    // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (theme === 'light') {
-            themeIcon.classList.remove('bx-sun');
-            themeIcon.classList.add('bx-moon');
-        } else {
-            themeIcon.classList.remove('bx-moon');
-            themeIcon.classList.add('bx-sun');
-        }
-        try { localStorage.setItem('theme', theme); } catch(e) {}
+    function setTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        themeIcon.className = t === 'light' ? 'bx bx-moon' : 'bx bx-sun';
+        try { localStorage.setItem('theme', t); } catch (e) {}
     }
-
-    // Load saved theme
-    let savedTheme = 'dark';
-    try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch(e) {}
-    setTheme(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(current === 'dark' ? 'light' : 'dark');
-    });
-
-    // ===== BACK TO TOP =====
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) backToTopBtn.classList.add('visible');
-        else backToTopBtn.classList.remove('visible');
-    });
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // ===== CV TAB SWITCHING =====
-    // (switchCV removed — resume section now shows text content with PDF preview cards)
+    let saved = 'dark';
+    try { saved = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+    setTheme(saved);
+    themeToggle.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
 </script>
-
 </body>
 </html>
