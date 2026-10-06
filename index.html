@@ -183,23 +183,29 @@
         .hero-orb .arc.a1 { animation: spin 14s linear infinite; }
         .hero-orb .arc.a2 { animation: spin 18s linear infinite reverse; inset: 7%; width: 86%; height: 86%; }
         .hero-orb .disc { position: absolute; inset: 11%; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--card-border); overflow: hidden; box-shadow: 0 20px 60px var(--shadow-color), inset 0 0 0 1px rgba(255,255,255,0.04); }
+        [data-theme="light"] .hero-orb .disc { background: transparent; border-color: rgba(37,99,235,0.18); box-shadow: 0 20px 50px rgba(37,99,235,0.12); }
+        [data-theme="light"] .hero-orb .disc::before { background: radial-gradient(circle at 50% 25%, rgba(255,255,255,0.35), transparent 65%); }
+        [data-theme="light"] .hero-orb .glow { background: radial-gradient(circle, rgba(37,99,235,0.22), rgba(6,182,212,0.1) 55%, transparent 72%); }
         .hero-orb .disc::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 25%, var(--hero-glow1), transparent 65%); }
         .hero-orb .disc img { position: relative; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.06); }
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes orbPulse { 0%,100% { opacity: 0.7; transform: scale(0.97); } 50% { opacity: 1; transform: scale(1.04); } }
         @keyframes floatA { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-        @keyframes numPop { 0%,70%,100% { transform: scale(1); text-shadow: none; } 80% { transform: scale(1.18); text-shadow: 0 0 18px rgba(34,211,238,0.6); } }
+        @keyframes numBlink { 0%,100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 0 rgba(34,211,238,0)); } 50% { transform: scale(1.14); opacity: 0.75; filter: drop-shadow(0 0 10px rgba(34,211,238,0.7)); } }
         .hero-stats {
             position: absolute; bottom: -34px; left: 50%; transform: translateX(-50%); display: flex;
-            background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden;
+            background: transparent; border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden;
             box-shadow: 0 10px 40px var(--shadow-color); backdrop-filter: blur(10px);
         }
         .hero-stats .stat { text-align: center; padding: 14px 22px; animation: floatA 3.6s ease-in-out infinite; }
         .hero-stats .stat:nth-child(2) { animation-delay: 0.6s; }
         .hero-stats .stat:nth-child(3) { animation-delay: 1.2s; }
-        .hero-stats .stat-num { display: inline-block; animation: numPop 6s ease-in-out infinite; }
-        .hero-stats .stat:nth-child(2) .stat-num { animation-delay: 2s; }
-        .hero-stats .stat:nth-child(3) .stat-num { animation-delay: 4s; }
+        .hero-stats .stat-num { display: inline-block; animation: numBlink 1.8s ease-in-out infinite; transition: transform 0.3s; }
+        .hero-stats .stat:nth-child(2) .stat-num { animation-delay: 0.6s; }
+        .hero-stats .stat:nth-child(3) .stat-num { animation-delay: 1.2s; }
+        .hero-stats .stat { transition: transform 0.3s, background 0.3s; cursor: default; border-radius: 12px; }
+        .hero-stats .stat:hover { transform: scale(1.12); background: var(--chip-bg); animation-play-state: paused; }
+        .hero-stats .stat:hover .stat-num { animation: none; transform: scale(1.2); filter: drop-shadow(0 0 12px rgba(34,211,238,0.8)); }
         @media (prefers-reduced-motion: reduce) { .hero-orb .arc, .hero-orb .glow, .hero-stats .stat, .hero-stats .stat-num { animation: none !important; } }
         .hero-stats .stat + .stat { border-left: 1px solid var(--card-border); }
         .hero-stats .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 700; }
@@ -476,14 +482,20 @@
                     <div class="hero-orb">
                         <div class="glow"></div>
                         <svg class="arc a1" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                            <defs><linearGradient id="arcG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
-                            <path d="M 50 2 A 48 48 0 0 1 98 50" stroke="url(#arcG1)" stroke-width="1.6" stroke-linecap="round"/>
-                            <path d="M 50 98 A 48 48 0 0 1 2 50" stroke="url(#arcG1)" stroke-width="1.6" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="arcG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+                                <marker id="ah1" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#67e8f9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+                            </defs>
+                            <path d="M 50 2 A 48 48 0 0 1 98 50" stroke="url(#arcG1)" stroke-width="1.6" stroke-linecap="round" marker-start="url(#ah1)" marker-end="url(#ah1)"/>
+                            <path d="M 50 98 A 48 48 0 0 1 2 50" stroke="url(#arcG1)" stroke-width="1.6" stroke-linecap="round" marker-start="url(#ah1)" marker-end="url(#ah1)"/>
                         </svg>
                         <svg class="arc a2" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                            <defs><linearGradient id="arcG2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#2563eb" stop-opacity="0.3"/></linearGradient></defs>
-                            <path d="M 15 20 A 48 48 0 0 1 85 20" stroke="url(#arcG2)" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
-                            <path d="M 85 80 A 48 48 0 0 1 15 80" stroke="url(#arcG2)" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+                            <defs>
+                                <linearGradient id="arcG2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#93c5fd" stop-opacity="0.5"/></linearGradient>
+                                <marker id="ah2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#93c5fd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+                            </defs>
+                            <path d="M 15 20 A 48 48 0 0 1 85 20" stroke="url(#arcG2)" stroke-width="1.1" stroke-linecap="round" opacity="0.9" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+                            <path d="M 85 80 A 48 48 0 0 1 15 80" stroke="url(#arcG2)" stroke-width="1.1" stroke-linecap="round" opacity="0.9" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
                         </svg>
                         <div class="disc"><img src="./home.png" alt="MD Ariful Islam"></div>
                     </div>
