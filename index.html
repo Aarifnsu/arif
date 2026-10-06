@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -463,7 +463,7 @@
         </nav>
         <div class="header-actions">
             <a href="#hire" class="btn btn-primary btn-sm nav-cta"><i class='bx bx-briefcase'></i> Hire Me</a>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class='bx bx-sun'></i></button>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class='bx bx-moon'></i></button>
             <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"><i class='bx bx-menu'></i></button>
         </div>
     </div>
@@ -1126,10 +1126,10 @@
         themeIcon.className = t === 'light' ? 'bx bx-moon' : 'bx bx-sun';
         try { localStorage.setItem('theme', t); } catch (e) {}
     }
-    let saved = 'dark';
-    try { saved = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+    let saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
     setTheme(saved);
-    themeToggle.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    themeToggle.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
 </script>
 </body>
 </html>
