@@ -423,9 +423,9 @@
         .wa-float:hover { transform: scale(1.08); }
 
         /* ===== PAGE SYSTEM ===== */
-        section { display: none; }
-        section.show { display: block; }
-        #hero.show { display: flex; }
+        main section, main #hero { display: none; }
+        main section.show { display: block; }
+        main #hero.show { display: flex; }
         .page-wrap { opacity: 1; transform: translateY(0); transition: opacity 0.22s ease, transform 0.22s ease; }
         .page-wrap.leaving { opacity: 0; transform: translateY(-10px); }
         .page-wrap.entering section.show { animation: pageIn 0.55s cubic-bezier(.22,.8,.3,1) both; }
