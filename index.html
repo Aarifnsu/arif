@@ -411,6 +411,12 @@
         .contact-form textarea { min-height: 130px; resize: vertical; }
         .contact-form ::placeholder { color: var(--text-muted); }
         @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .contact-form .row { grid-template-columns: 1fr; } }
+        .contact-form[hidden], .contact-success[hidden], .contact-error[hidden] { display: none !important; }
+        .contact-success { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; padding: 40px 28px; }
+        .contact-success i { font-size: 56px; color: var(--neon-cyan); }
+        .contact-success h3 { font-size: 1.5rem; margin: 0; }
+        .contact-success p { color: var(--text-muted); margin: 0 0 8px; max-width: 420px; }
+        .contact-error { color: #ef4444; font-size: 0.9rem; margin: 0; }
 
         /* ===== FOOTER ===== */
         footer { background: var(--bg-secondary); border-top: 1px solid var(--card-border); padding: 36px 0; }
@@ -967,9 +973,11 @@
                 </div>
             </div>
             <form class="card contact-form fade-up" action="https://formsubmit.co/arif.frelance@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New project inquiry from portfolio">
+                <input type="hidden" name="_subject" value="New inquiry — GitHub Portfolio">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="source" value="GitHub Portfolio (aarifnsu.github.io/arif)">
+                <input type="hidden" name="_autoresponse" value="Thank you for reaching out! I have received your message and will contact you soon, usually within a few hours. — MD Ariful Islam">
                 <div class="row">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -983,8 +991,15 @@
                     <option>Something else</option>
                 </select>
                 <textarea name="message" placeholder="Tell me about your project, goals and timeline…" required></textarea>
+                <p id="contact-error" class="contact-error" role="alert" hidden>Sorry, your message could not be sent. Please try again or email me at arif.frelance@gmail.com.</p>
                 <button type="submit" class="btn btn-primary" style="align-self:flex-start;"><i class='bx bx-send'></i> Send Message</button>
             </form>
+            <div id="contact-success" class="card contact-success" role="status" hidden>
+                <i class='bx bx-check-circle'></i>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. I'll get back to you within a few hours. A confirmation email is on its way to your inbox.</p>
+                <button type="button" id="contact-again" class="btn btn-primary">Send Another Message</button>
+            </div>
         </div>
     </div>
 </section>
@@ -1130,6 +1145,46 @@
     try { saved = localStorage.getItem('theme') || 'light'; } catch (e) {}
     setTheme(saved);
     themeToggle.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+
+    // Contact form: send via FormSubmit AJAX and show the result on the page
+    (function () {
+        const form = document.querySelector('.contact-form');
+        if (!form) return;
+        const success = document.getElementById('contact-success');
+        const errorBox = document.getElementById('contact-error');
+        const btn = form.querySelector('button[type="submit"]');
+        const btnHtml = btn.innerHTML;
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorBox.hidden = true;
+            btn.disabled = true;
+            btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Sending...";
+            const data = Object.fromEntries(new FormData(form).entries());
+            data._subject = 'New inquiry — GitHub Portfolio — ' + (data.name || '');
+            data._replyto = data.email;
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/arif.frelance@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const out = await res.json().catch(() => ({}));
+                if (!res.ok || String(out.success) !== 'true') throw new Error(out.message || 'failed');
+                form.reset();
+                form.hidden = true;
+                success.hidden = false;
+            } catch (err) {
+                errorBox.hidden = false;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = btnHtml;
+            }
+        });
+        document.getElementById('contact-again').addEventListener('click', () => {
+            success.hidden = true;
+            form.hidden = false;
+        });
+    })();
 </script>
 </body>
 </html>
