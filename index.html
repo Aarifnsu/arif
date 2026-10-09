@@ -1079,7 +1079,7 @@
     function showPage(name, push = true) {
         if (!PAGES[name]) name = 'home';
         if (busy) return;
-        if (push) history.pushState({ page: name }, '', '#' + name);
+        if (push) history.pushState({ page: name }, '', name === 'home' ? location.pathname + location.search : '#' + name);
         if (currentPage === name) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
         busy = true;
         const doSwitch = () => {
@@ -1103,7 +1103,7 @@
     });
     window.addEventListener('popstate', e => showPage((e.state && e.state.page) || location.hash.slice(1) || 'home', false));
     showPage(location.hash.slice(1) || 'home', false);
-    history.replaceState({ page: currentPage }, '', '#' + currentPage);
+    history.replaceState({ page: currentPage }, '', currentPage === 'home' ? location.pathname + location.search : '#' + currentPage);
 
     // Fade-up on scroll
     const io = new IntersectionObserver(entries => {
