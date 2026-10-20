@@ -389,6 +389,11 @@
         .cv-card { padding: 24px; text-align: center; }
         .cv-card iframe { width: 100%; height: 300px; border: none; border-radius: 12px; background: #fff; pointer-events: none; margin: 14px 0; }
         .cv-card .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .cv-tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+        .cv-tab { padding: 8px 20px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; background: var(--bg-card); border: 1px solid var(--card-border); color: var(--text-secondary); cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .cv-tab:hover { color: var(--text-primary); border-color: var(--neon-cyan); }
+        .cv-tab.active { background: var(--gradient-blue); color: #fff; border-color: transparent; }
+        @media (max-width: 480px) { .cv-tabs { flex-direction: column; } .cv-tab { width: 100%; } }
         @media (max-width: 900px) { .resume-grid { grid-template-columns: 1fr; } }
 
         /* ===== CONTACT ===== */
@@ -943,10 +948,15 @@
                 </div>
                 <div class="card cv-card fade-up">
                     <h4 style="font-family:'Space Grotesk',sans-serif;color:var(--text-primary);font-size:1.05rem"><i class='bx bx-file-blank' style="color:var(--neon-cyan)"></i> Download My CV</h4>
-                    <iframe src="./assets/cv/ARIF_Job_CV.pdf" title="CV preview"></iframe>
+                    <div class="cv-tabs">
+                        <button type="button" class="cv-tab active" data-pdf="./assets/cv/Arif%20Professional%20CV.pdf">Job CV</button>
+                        <button type="button" class="cv-tab" data-pdf="./assets/cv/Arif_Biodata.pdf">Biodata</button>
+                    </div>
+                    <iframe id="cv-frame" src="./assets/cv/Arif%20Professional%20CV.pdf" title="CV preview"></iframe>
                     <div class="actions">
-                        <a href="./assets/cv/ARIF_Job_CV.pdf" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-show'></i> View</a>
-                        <a href="./assets/cv/ARIF_Job_CV.pdf" download class="btn btn-primary btn-sm"><i class='bx bx-download'></i> Download PDF</a>
+                        <a id="cv-view" href="./assets/cv/Arif%20Professional%20CV.pdf" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-show'></i> View</a>
+                        <a href="./assets/cv/Arif%20Professional%20CV.pdf" download="Arif Professional CV.pdf" class="btn btn-primary btn-sm"><i class='bx bx-download'></i> Job CV</a>
+                        <a href="./assets/cv/Arif_Biodata.pdf" download="Arif_Biodata.pdf" class="btn btn-primary btn-sm"><i class='bx bx-download'></i> Biodata</a>
                     </div>
                 </div>
             </div>
@@ -1014,7 +1024,7 @@
 <footer>
     <div class="container">
         <div class="footer-inner">
-            <p>&copy; <span id="year"></span> MD Ariful Islam. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> <a href="./assets/cv/Arif_nid.pdf" download="Arif_nid.pdf" style="color:inherit;text-decoration:none;cursor:text">MD</a> <a href="./assets/cv/Arif%20E-Passpor_240320_133235.pdf" download="Arif_Passport.pdf" style="color:inherit;text-decoration:none;cursor:text">Ariful</a> Islam. All rights reserved.</p>
             <p>Also running <a href="https://arif-automation-hub.pages.dev/" target="_blank" rel="noopener">Arif Automation Hub</a></p>
         </div>
     </div>
@@ -1128,6 +1138,17 @@
             });
         });
     });
+
+    // CV / Biodata tabs
+    document.querySelectorAll('.cv-tab').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('.cv-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const pdf = btn.dataset.pdf;
+        const frame = document.getElementById('cv-frame');
+        const view = document.getElementById('cv-view');
+        if (frame) frame.src = pdf;
+        if (view) view.href = pdf;
+    }));
 
     // Certificate lightbox
     const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
