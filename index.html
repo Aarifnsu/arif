@@ -952,7 +952,7 @@
                         <button type="button" class="cv-tab active" data-pdf="./assets/cv/Arif%20Professional%20CV.pdf">Job CV</button>
                         <button type="button" class="cv-tab" data-pdf="./assets/cv/Arif_Biodata.pdf">Biodata</button>
                     </div>
-                    <iframe id="cv-frame" src="./assets/cv/Arif%20Professional%20CV.pdf" title="CV preview"></iframe>
+                    <iframe id="cv-frame" src="https://docs.google.com/viewer?embedded=true&url=https%3A%2F%2Farifulislam.online%2Fassets%2Fcv%2FArif%2520Professional%2520CV.pdf" title="CV preview"></iframe>
                     <div class="actions">
                         <a id="cv-view" href="./assets/cv/Arif%20Professional%20CV.pdf" target="_blank" class="btn btn-outline btn-sm"><i class='bx bx-show'></i> View</a>
                         <a href="./assets/cv/Arif%20Professional%20CV.pdf" download="Arif Professional CV.pdf" class="btn btn-primary btn-sm"><i class='bx bx-download'></i> Job CV</a>
@@ -1144,9 +1144,10 @@
         document.querySelectorAll('.cv-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const pdf = btn.dataset.pdf;
+        const gv = 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(new URL(pdf, location.href).href);
         const frame = document.getElementById('cv-frame');
         const view = document.getElementById('cv-view');
-        if (frame) frame.src = pdf;
+        if (frame) frame.src = gv;
         if (view) view.href = pdf;
     }));
 
